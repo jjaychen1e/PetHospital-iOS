@@ -1,0 +1,10 @@
+target 'PetHospital-iOS' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for PetHospital-iOS
+  pod 'Alamofire', '~> 5.2'
+  pod 'SnapKit', '~> 5.0.0'
+  pod 'SDWebImage', '~> 5.0'
+  pod 'SDWebImageSwiftUI'
+end
