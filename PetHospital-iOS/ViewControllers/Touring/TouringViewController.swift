@@ -28,8 +28,8 @@ class TouringViewController: UIViewController {
         self.navigationItem.searchController = searchController
         
         var departments = Array<Department>()
-        for _ in 0..<100 {
-            departments.append(.init(name: "科室名", thumbnail: "https://cdn.jsdelivr.net/gh/JJAYCHENFIGURE/Image/img/A02/avatar_2020_03_19_16_43.png"))
+        for i in 0..<100 {
+            departments.append(.init(id: i, name: "科室\(i)", description: "科室\(i)的描述", picture: "https://cdn.jsdelivr.net/gh/JJAYCHENFIGURE/Image/img/A02/avatar_2020_03_19_16_43.png", roleName: "科室\(i)的负责人", position: [], equipments: []))
         }
         departmentViewModel.departments = departments
         
@@ -46,8 +46,8 @@ class TouringViewController: UIViewController {
 extension TouringViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         var departments = Array<Department>()
-        for _ in 0..<100 {
-            departments.append(.init(name: "科室名", thumbnail: "https://cdn.jsdelivr.net/gh/JJAYCHENFIGURE/Image/img/A02/avatar_2020_03_19_16_43.png"))
+        for i in 0..<100 {
+            departments.append(.init(id: i, name: "科室\(i)", description: "科室\(i)的描述", picture: "https://cdn.jsdelivr.net/gh/JJAYCHENFIGURE/Image/img/A02/avatar_2020_03_19_16_43.png", roleName: "科室\(i)的负责人", position: [], equipments: []))
         }
         if let searchText = searchController.searchBar.text,
            searchText != "" {

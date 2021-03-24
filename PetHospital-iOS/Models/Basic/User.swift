@@ -5,20 +5,49 @@
 //  Created by jjaychen on 2021/3/15.
 //
 
+import GRDB
+
 struct LoginParameter: Codable {
     var account: AccountType
     var password: String
 }
 
 struct User: Codable {
-    var token: String
-    var userName: String
+    var username: String
+    var password: String = ""
     var profileURL: String
+    var token: String
     
     enum CodingKeys: String, CodingKey {
-        case token
-        case userName = "usrName"
+        case username = "username"
         case profileURL = "profileUrl"
+        case token
+    }
+}
+
+extension User: TableRecord {
+    /// The table columns
+    enum Columns: String, ColumnExpression {
+        case username, password, profileURL = "profile_url", token
+    }
+}
+
+extension User: FetchableRecord {
+    init(row: Row) {
+        username = row[Columns.username]
+        password = row[Columns.password]
+        profileURL = row[Columns.profileURL]
+        token = row[Columns.token]
+    }
+}
+
+extension User: PersistableRecord {
+    /// The values persisted in the database
+    func encode(to container: inout PersistenceContainer) {
+        container[Columns.username] = username
+        container[Columns.password] = password
+        container[Columns.profileURL] = profileURL
+        container[Columns.token] = token
     }
 }
 

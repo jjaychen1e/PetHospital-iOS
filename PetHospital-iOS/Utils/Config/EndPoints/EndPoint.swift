@@ -11,4 +11,5 @@ let BaseAddress = ""
 
 enum EndPoint: String {
     case login = "/usr/login"
+    case departmentInfo = "/usr/getLayout"
 }

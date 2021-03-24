@@ -1,0 +1,13 @@
+xcassets:
+  inputs: PetHospital-iOS/Assets.xcassets
+  outputs:
+    templateName: swift5
+    output: Assets.swift
+
+ib:
+  inputs: PetHospital-iOS/
+  outputs:
+    - templateName: scenes-swift5
+      output: Storyboard Scenes.swift
+    - templateName: segues-swift5
+      output: Storyboard Segues.swift

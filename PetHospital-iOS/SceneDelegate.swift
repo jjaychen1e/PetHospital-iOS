@@ -16,7 +16,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let window = UIWindow(windowScene: windowScene)
+        let nvc = UINavigationController()
+        nvc.setNavigationBarHidden(true, animated: false)
+        window.rootViewController = nvc
+        
+        if LoginHelper.hasCachedLoginStatus() {
+            nvc.setViewControllers([StoryboardScene.Main.mainTabBarController.instantiate()], animated: false)
+            
+            LoginHelper.checkLoginStatus { valid in
+                if !valid {
+                    nvc.setViewControllers([StoryboardScene.Login.initialScene.instantiate()], animated: true)
+                    DispatchQueue.main.async {
+                        ToastHelper.show(emoji: "⚠️", title: "身份信息认证失败", subtitle: "请尝试重新登录。")
+                    }
+                }
+            }
+        } else {
+            nvc.setViewControllers([StoryboardScene.Login.initialScene.instantiate()], animated: false)
+        }
+        
+        self.window = window
+        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
