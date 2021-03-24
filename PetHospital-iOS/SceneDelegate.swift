@@ -20,7 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         let nvc = UINavigationController()
-        nvc.setNavigationBarHidden(true, animated: false)
         window.rootViewController = nvc
         
         if LoginHelper.hasCachedLoginStatus() {
