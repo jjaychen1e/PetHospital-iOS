@@ -36,6 +36,7 @@ class NetworkManager {
     }
     
     /// We should provide a non-generic version if parameter is `nil`. And this method can only support GET.
+    @discardableResult
     func fetch<T: Decodable>(endPoint: EndPoint, completionHandler: @escaping (T?) -> ()) -> DataRequest {
         let request = AF.request(BaseAddress + endPoint.rawValue,
                                  method: .get,
@@ -62,6 +63,7 @@ class NetworkManager {
         return DataRequest(request: request)
     }
     
+    @discardableResult
     func fetch<T: Decodable, P: Encodable>(endPoint: EndPoint, method: HTTPMethod = .GET, parameters: P? = nil, completionHandler: @escaping (T?) -> ()) -> DataRequest {
         let request = AF.request(BaseAddress + endPoint.rawValue,
                                  method: method.convertToAlamofireHTTPMethod(),
