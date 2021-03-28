@@ -29,8 +29,14 @@ class DataRequest {
 
 class NetworkManager {
     
+    var shared = NetworkManager()
+    
+    private init() {
+        
+    }
+    
     /// We should provide a non-generic version if parameter is `nil`. And this method can only support GET.
-    static func fetch<T: Decodable>(endPoint: EndPoint, completionHandler: @escaping (T?) -> ()) -> DataRequest {
+    func fetch<T: Decodable>(endPoint: EndPoint, completionHandler: @escaping (T?) -> ()) -> DataRequest {
         let request = AF.request(BaseAddress + endPoint.rawValue,
                                  method: .get,
                                  headers: nil)
@@ -56,7 +62,7 @@ class NetworkManager {
         return DataRequest(request: request)
     }
     
-    static func fetch<T: Decodable, P: Encodable>(endPoint: EndPoint, method: HTTPMethod = .GET, parameters: P? = nil, completionHandler: @escaping (T?) -> ()) -> DataRequest {
+    func fetch<T: Decodable, P: Encodable>(endPoint: EndPoint, method: HTTPMethod = .GET, parameters: P? = nil, completionHandler: @escaping (T?) -> ()) -> DataRequest {
         let request = AF.request(BaseAddress + endPoint.rawValue,
                                  method: method.convertToAlamofireHTTPMethod(),
                                  parameters: parameters,
