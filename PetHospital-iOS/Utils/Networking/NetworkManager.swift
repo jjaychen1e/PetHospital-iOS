@@ -13,13 +13,26 @@ import Alamofire
 /// Alamofire directly. So one day, if we want to replace Alamofire with another framework, the only thing we
 /// need to do is to modify this file.
 
+class DataRequest {
+    private var request: Alamofire.DataRequest
+    
+    init(request: Alamofire.DataRequest) {
+        self.request = request
+    }
+    
+    func cancel() {
+        self.request.cancel()
+    }
+}
+
+
 class NetworkManager {
     
     /// We should provide a non-generic version if parameter is `nil`. And this method can only support GET.
-    static func fetch<T: Decodable>(endPoint: EndPoint, completionHandler: @escaping (T?) -> ()) {
-        AF.request(BaseAddress + endPoint.rawValue,
-                   method: .get,
-                   headers: nil)
+    static func fetch<T: Decodable>(endPoint: EndPoint, completionHandler: @escaping (T?) -> ()) -> DataRequest {
+        let request = AF.request(BaseAddress + endPoint.rawValue,
+                                 method: .get,
+                                 headers: nil)
             .response { (data) in
                 guard data.error != nil else {
                     print(data.error!)
@@ -39,14 +52,15 @@ class NetworkManager {
                     completionHandler(nil)
                 }
             }
+        return DataRequest(request: request)
     }
     
-    static func fetch<T: Decodable, P: Encodable>(endPoint: EndPoint, method: HTTPMethod = .GET, parameters: P? = nil, completionHandler: @escaping (T?) -> ()) {
-        AF.request(BaseAddress + endPoint.rawValue,
-                   method: method.convertToAlamofireHTTPMethod(),
-                   parameters: parameters,
-                   encoder: URLEncodedFormParameterEncoder.default,
-                   headers: nil)
+    static func fetch<T: Decodable, P: Encodable>(endPoint: EndPoint, method: HTTPMethod = .GET, parameters: P? = nil, completionHandler: @escaping (T?) -> ()) -> DataRequest {
+        let request = AF.request(BaseAddress + endPoint.rawValue,
+                                 method: method.convertToAlamofireHTTPMethod(),
+                                 parameters: parameters,
+                                 encoder: URLEncodedFormParameterEncoder.default,
+                                 headers: nil)
             .response { (data) in
                 guard data.error != nil else {
                     print(data.error!)
@@ -66,6 +80,7 @@ class NetworkManager {
                     completionHandler(nil)
                 }
             }
+        return DataRequest(request: request)
     }
 }
 
