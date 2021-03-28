@@ -29,7 +29,7 @@ class DataRequest {
 
 class NetworkManager {
     
-    var shared = NetworkManager()
+    static var shared = NetworkManager()
     
     private init() {
         

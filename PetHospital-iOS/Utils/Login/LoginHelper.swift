@@ -35,7 +35,7 @@ class LoginHelper {
     }
     
     static func login(with parameter: LoginParameter, completionHandler: @escaping (Bool, String) -> ()) {
-        NetworkManager.fetch(endPoint: .login, parameters: parameter) { (result: ResultEntity<User>?) in
+        NetworkManager.shared.fetch(endPoint: .login, parameters: parameter) { (result: ResultEntity<User>?) in
             if let result = result {
                 guard result.code == .success else {
                     completionHandler(false, "\(result.code). \(result.message).")
