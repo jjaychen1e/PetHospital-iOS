@@ -8,10 +8,7 @@
 import Foundation
 import Alamofire
 
-/// This class is an encapsulation of Alamofire for decoupling. We define our classes, enums, and structs like
-/// `NetworkManager` and `HTTPMethod`, and use them in all other places in our code, instead of using
-/// Alamofire directly. So one day, if we want to replace Alamofire with another framework, the only thing we
-/// need to do is to modify this file.
+/// This class in an encapsulation of Alamofire.DataRequest.
 
 class DataRequest {
     private var request: Alamofire.DataRequest
@@ -25,6 +22,10 @@ class DataRequest {
     }
 }
 
+/// This class is an encapsulation of Alamofire for decoupling. We define our classes, enums, and structs like
+/// `NetworkManager` and `HTTPMethod`, and use them in all other places in our code, instead of using
+/// Alamofire directly. So one day, if we want to replace Alamofire with another framework, the only thing we
+/// need to do is to modify this file.
 
 class NetworkManager {
     
