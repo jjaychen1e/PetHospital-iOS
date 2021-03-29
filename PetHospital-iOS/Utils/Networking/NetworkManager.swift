@@ -97,7 +97,7 @@ public enum HTTPMethod: String {
     case GET  = "GET"
     case POST = "POST"
     
-    func convertToAlamofireHTTPMethod() -> Alamofire.HTTPMethod {
+    fileprivate func convertToAlamofireHTTPMethod() -> Alamofire.HTTPMethod {
         return Alamofire.HTTPMethod(rawValue: self.rawValue.uppercased())
     }
 }
