@@ -22,6 +22,7 @@
 		6347702425F908CE00BF8612 /* RolePlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6347702325F908CE00BF8612 /* RolePlayingView.swift */; };
 		637A8A4225FEEA680086ABEF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637A8A4125FEEA680086ABEF /* User.swift */; };
 		637A8A4625FEED430086ABEF /* ResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637A8A4525FEED430086ABEF /* ResultEntity.swift */; };
+		638D28F526116B0F00DC32B9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638D28F426116B0F00DC32B9 /* WebViewController.swift */; };
 		63A724C12608E7EE00A27695 /* RegisterPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A724C02608E7EE00A27695 /* RegisterPasswordViewController.swift */; };
 		63A724C42608E83100A27695 /* UIViewController+UINavigationBarItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A724C32608E83100A27695 /* UIViewController+UINavigationBarItem+Extension.swift */; };
 		63A724C82608EA1C00A27695 /* LoginPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A724C72608EA1C00A27695 /* LoginPasswordViewController.swift */; };
@@ -41,6 +42,7 @@
 		63E614E4260824CA00F259B6 /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E614E3260824CA00F259B6 /* LoginHelper.swift */; };
 		63E614E9260829BD00F259B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E614E8260829BD00F259B6 /* LoginViewController.swift */; };
 		63E614ED26082DF400F259B6 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E614EC26082DF400F259B6 /* Login.storyboard */; };
+		63F5D9262611596400832200 /* ContinueWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F5D9252611596400832200 /* ContinueWithButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,7 @@
 		6347702325F908CE00BF8612 /* RolePlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolePlayingView.swift; sourceTree = "<group>"; };
 		637A8A4125FEEA680086ABEF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		637A8A4525FEED430086ABEF /* ResultEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultEntity.swift; path = ../../../../ResultEntity.swift; sourceTree = "<group>"; };
+		638D28F426116B0F00DC32B9 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		63A724C02608E7EE00A27695 /* RegisterPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPasswordViewController.swift; sourceTree = "<group>"; };
 		63A724C32608E83100A27695 /* UIViewController+UINavigationBarItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UINavigationBarItem+Extension.swift"; sourceTree = "<group>"; };
 		63A724C72608EA1C00A27695 /* LoginPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		63E614E3260824CA00F259B6 /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
 		63E614E8260829BD00F259B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		63E614EC26082DF400F259B6 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		63F5D9252611596400832200 /* ContinueWithButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueWithButton.swift; sourceTree = "<group>"; };
 		CC5E8E3341C0B0D5D7ED37D8 /* Pods-PetHospital-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetHospital-iOS.debug.xcconfig"; path = "Target Support Files/Pods-PetHospital-iOS/Pods-PetHospital-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D01D2E739B2144F7741F83AF /* Pods-PetHospital-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetHospital-iOS.release.xcconfig"; path = "Target Support Files/Pods-PetHospital-iOS/Pods-PetHospital-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +165,16 @@
 			path = Basic;
 			sourceTree = "<group>";
 		};
+		638D28F326116AE800DC32B9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				63F5D9252611596400832200 /* ContinueWithButton.swift */,
+				63A724D32608F6B900A27695 /* ToastView.swift */,
+				6325038E260B3BCE00E04F6A /* CircularLoadingView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		63A724B32608D3F200A27695 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,8 +194,8 @@
 		63A724D22608F69F00A27695 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				63A724D32608F6B900A27695 /* ToastView.swift */,
-				6325038E260B3BCE00E04F6A /* CircularLoadingView.swift */,
+				638D28F326116AE800DC32B9 /* Utils */,
+				638D28F426116B0F00DC32B9 /* WebViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -481,12 +495,14 @@
 				6325037B260B35EF00E04F6A /* Storyboard Scenes.swift in Sources */,
 				6314213026034D0A00F7D8E2 /* NetworkManager.swift in Sources */,
 				6347701B25F8DFF200BF8612 /* TouringListView.swift in Sources */,
+				638D28F526116B0F00DC32B9 /* WebViewController.swift in Sources */,
 				63250372260B336C00E04F6A /* Assets.swift in Sources */,
 				63A724C82608EA1C00A27695 /* LoginPasswordViewController.swift in Sources */,
 				6325037A260B35EF00E04F6A /* Storyboard Segues.swift in Sources */,
 				63E614DA2608190200F259B6 /* EndPoint.swift in Sources */,
 				63A724C42608E83100A27695 /* UIViewController+UINavigationBarItem+Extension.swift in Sources */,
 				633572F525F90AF500C8F882 /* RolePlayingViewController.swift in Sources */,
+				63F5D9262611596400832200 /* ContinueWithButton.swift in Sources */,
 				637A8A4225FEEA680086ABEF /* User.swift in Sources */,
 				6347700B25F8D83700BF8612 /* Department.swift in Sources */,
 				63E614DF2608213C00F259B6 /* GlobalCache.swift in Sources */,

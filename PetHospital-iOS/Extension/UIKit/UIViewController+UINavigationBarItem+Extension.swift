@@ -9,10 +9,10 @@ import UIKit
 
 extension UIViewController {
     
-    func setTransparentNavigationBar() {
+    func setTransparentNavigationBarWith(backgroundColor: UIColor = .white) {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()
-        appearance.backgroundColor = Asset.dynamicWhite.color
+        appearance.backgroundColor = backgroundColor
         appearance.titleTextAttributes = [.foregroundColor: UIColor.systemBackground]
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance

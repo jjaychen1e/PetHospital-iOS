@@ -10,6 +10,7 @@ import Foundation
 let BaseAddress = ""
 
 enum EndPoint: String {
-    case login = "/usr/login"
+    case login = "/aouth/register/all"
+    case thridPartyLogin = "/aouth/login/"
     case departmentInfo = "/usr/getLayout"
 }

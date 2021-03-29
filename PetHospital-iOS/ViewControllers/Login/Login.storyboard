@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gH6-1Y-pSq">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -14,35 +14,29 @@
             <objects>
                 <viewController storyboardIdentifier="loginViewController" id="gH6-1Y-pSq" customClass="LoginViewController" customModule="PetHospital_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LhO-Df-RVv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awx-IO-H54">
-                                <rect key="frame" x="121.5" y="60" width="171.5" height="41"/>
+                                <rect key="frame" x="109.33333333333333" y="60" width="171.66666666666669" height="40.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我们将使用您的用户名来注册账户。请提供由英文和数字字符组成的用户名，长度至少6位，且不得超过10位。" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3b-z4-4gY">
-                                <rect key="frame" x="42.5" y="109" width="329.5" height="61"/>
+                                <rect key="frame" x="39" y="108.66666666666669" width="312" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="example" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fzu-aX-9fR">
-                                <rect key="frame" x="107" y="230" width="200" height="34"/>
+                                <rect key="frame" x="95" y="229.66666666666666" width="200" height="33.999999999999972"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="ZhX-AY-96a"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next" textContentType="username"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如果您已拥有账号，可以直接登录。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2q-gO-UbF">
-                                <rect key="frame" x="93" y="280" width="228.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" name="dynamicGray"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="c5f-Bt-X4a">
                                 <rect key="frame" x="64.5" y="186" width="285.5" height="34"/>
                                 <subviews>
@@ -70,9 +64,45 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2q-gO-UbF">
+                                <rect key="frame" x="59.333333333333343" y="279.66666666666669" width="271.33333333333326" height="33.666666666666686"/>
+                                <string key="text">如果您已拥有账号，可以直接登录。
+您也可以选择使用支持的第三方平台登录。</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" name="dynamicGray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e4x-IU-bGQ">
+                                <rect key="frame" x="45" y="700" width="300" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jUR-JU-HVM" customClass="ContinueWithButton" customModule="PetHospital_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="gqv-Vt-NQg"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="logoImage" value="GoogleLogoLogin"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="continueTextColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="customBackgroundColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="continueString" value="Continue with Google"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="oUN-8g-oQY"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yE6-ag-a0Z"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="dynamicLightGrayBackground"/>
                         <constraints>
                             <constraint firstItem="j3b-z4-4gY" firstAttribute="centerX" secondItem="yE6-ag-a0Z" secondAttribute="centerX" id="4GA-kX-il3"/>
                             <constraint firstItem="M2q-gO-UbF" firstAttribute="top" secondItem="Fzu-aX-9fR" secondAttribute="bottom" constant="16" id="5A2-ig-TvD"/>
@@ -83,6 +113,8 @@
                             <constraint firstItem="M2q-gO-UbF" firstAttribute="centerX" secondItem="yE6-ag-a0Z" secondAttribute="centerX" id="RSH-tm-QZK"/>
                             <constraint firstItem="j3b-z4-4gY" firstAttribute="top" secondItem="Awx-IO-H54" secondAttribute="bottom" constant="8" id="WDs-Ob-suH"/>
                             <constraint firstItem="c5f-Bt-X4a" firstAttribute="centerX" secondItem="yE6-ag-a0Z" secondAttribute="centerX" id="Yfp-Ag-vmS"/>
+                            <constraint firstItem="e4x-IU-bGQ" firstAttribute="centerX" secondItem="yE6-ag-a0Z" secondAttribute="centerX" id="hkg-cg-sfR"/>
+                            <constraint firstItem="yE6-ag-a0Z" firstAttribute="bottom" secondItem="e4x-IU-bGQ" secondAttribute="bottom" constant="60" id="mzW-Ej-Ht3"/>
                             <constraint firstItem="c5f-Bt-X4a" firstAttribute="top" secondItem="j3b-z4-4gY" secondAttribute="bottom" constant="60" id="qBo-tp-rTT"/>
                             <constraint firstItem="Fzu-aX-9fR" firstAttribute="top" secondItem="j3b-z4-4gY" secondAttribute="bottom" constant="60" id="rTS-pu-3j3"/>
                         </constraints>
@@ -94,6 +126,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="w65-14-XX5"/>
                     <connections>
+                        <outlet property="continueWithGoogle" destination="jUR-JU-HVM" id="k5s-iT-CEV"/>
                         <outlet property="usernameTextField" destination="Fzu-aX-9fR" id="h3y-vw-lUg"/>
                     </connections>
                 </viewController>
@@ -106,23 +139,23 @@
             <objects>
                 <viewController storyboardIdentifier="registerPasswordViewController" id="Trf-gI-JyC" customClass="RegisterPasswordViewController" customModule="PetHospital_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6mN-AR-hfD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bas-iY-4wI">
-                                <rect key="frame" x="138.5" y="60" width="137.5" height="41"/>
+                                <rect key="frame" x="126.33333333333333" y="60" width="137.33333333333337" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请尽量同时使用数字、字母和特殊字符作为您的密码。密码应至少包含8个字符，且不超过20个字符。" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pp-Xm-GeF">
-                                <rect key="frame" x="42.5" y="109" width="329.5" height="61"/>
+                                <rect key="frame" x="39" y="109" width="312" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="example" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W02-co-qat">
-                                <rect key="frame" x="107" y="230" width="200" height="34"/>
+                                <rect key="frame" x="95" y="230" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="lkX-lS-MWz"/>
                                 </constraints>
@@ -130,7 +163,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恭喜您！该用户名可用。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ib-nI-EQr">
-                                <rect key="frame" x="128" y="280" width="158" height="17"/>
+                                <rect key="frame" x="116" y="280" width="158" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" name="dynamicGray"/>
                                 <nil key="highlightedColor"/>
@@ -198,23 +231,23 @@
             <objects>
                 <viewController storyboardIdentifier="loginPasswordViewController" id="ysK-73-pEj" customClass="LoginPasswordViewController" customModule="PetHospital_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jvm-Gy-U6z">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqa-gl-hPz">
-                                <rect key="frame" x="138.5" y="60" width="137.5" height="41"/>
+                                <rect key="frame" x="126.33333333333333" y="60" width="137.33333333333337" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="该账号已存在，请输入您的密码以登录。若该账号不是您的，请更换账号。" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFb-r5-QwA">
-                                <rect key="frame" x="42.5" y="109" width="329.5" height="41"/>
+                                <rect key="frame" x="39" y="109.00000000000001" width="312" height="40.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="example" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q6W-aC-AkD">
-                                <rect key="frame" x="107" y="210" width="200" height="34"/>
+                                <rect key="frame" x="95" y="209.66666666666666" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="f0F-J5-Cw0"/>
                                 </constraints>
@@ -279,8 +312,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="GoogleLogoLogin" width="50.666667938232422" height="50.666667938232422"/>
         <namedColor name="dynamicGray">
             <color red="0.32499998807907104" green="0.32499998807907104" blue="0.32499998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="dynamicLightGrayBackground">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -11,12 +11,13 @@ import SwiftUI
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var continueWithGoogle: UIView!
     private var continueBarButtonItem: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setTransparentNavigationBar()
+        setTransparentNavigationBarWith(backgroundColor: Asset.dynamicLightGrayBackground.color)
         continueBarButtonItem = UIBarButtonItem(title: "继续", style: .done, target: self, action: #selector(tryToContinue))
         navigationItem.rightBarButtonItem = continueBarButtonItem
         
@@ -29,12 +30,26 @@ class LoginViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
         
+        let continueWithGoogleTapGesture = UITapGestureRecognizer(target: self, action: #selector(continueWithGoogle(_:)))
+        self.continueWithGoogle.addGestureRecognizer(continueWithGoogleTapGesture)
+        
         self.usernameTextField.delegate = self
-        self.usernameTextField.becomeFirstResponder()
+//        self.usernameTextField.becomeFirstResponder()
+    }
+    
+    @objc
+    private func continueWithGoogle (_ sender: UITapGestureRecognizer) {
+        print("continue with google")
+        let webView = WebViewController()
+        webView.load("https://www.apple.com")
+        let nvc = UINavigationController(rootViewController: webView)
+        self.present(nvc, animated: true) {
+            
+        }
     }
 
     @objc
-    func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+    private func dismissKeyboard (_ sender: UITapGestureRecognizer) {
         usernameTextField.resignFirstResponder()
     }
     
@@ -69,11 +84,11 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func goRegiter() {
+    private func goRegiter() {
         self.navigationController?.pushViewController(StoryboardScene.Login.registerPasswordViewController.instantiate(), animated: true)
     }
     
-    func goLogin() {
+    private func goLogin() {
         self.navigationController?.pushViewController(StoryboardScene.Login.loginPasswordViewController.instantiate(), animated: true)
     }
 }

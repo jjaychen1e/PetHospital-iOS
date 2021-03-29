@@ -27,11 +27,17 @@ class TouringViewController: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         self.navigationItem.searchController = searchController
         
-        var departments = Array<Department>()
-        for i in 0..<100 {
-            departments.append(.init(id: i, name: "科室\(i)", description: "科室\(i)的描述", picture: "https://cdn.jsdelivr.net/gh/JJAYCHENFIGURE/Image/img/A02/avatar_2020_03_19_16_43.png", roleName: "科室\(i)的负责人", position: [], equipments: []))
+        NetworkManager.shared.fetch(endPoint: .departmentInfo) { (departments: [Department]?) in
+            if let departments = departments {
+                self.departmentViewModel.departments = departments
+            }
         }
-        departmentViewModel.departments = departments
+        
+//        var departments = Array<Department>()
+//        for i in 0..<100 {
+//            departments.append(.init(id: i, name: "科室\(i)", description: "科室\(i)的描述", picture: "https://cdn.jsdelivr.net/gh/JJAYCHENFIGURE/Image/img/A02/avatar_2020_03_19_16_43.png", roleName: "科室\(i)的负责人", position: [], equipments: []))
+//        }
+//        departmentViewModel.departments = departments
         
         let touringListViewController = UIHostingController(rootView: TouringListView(departmentViewModel:  departmentViewModel))
         addChild(touringListViewController)

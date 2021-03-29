@@ -39,5 +39,4 @@ struct Department: Codable, Identifiable {
         case position
         case equipments
     }
-    
 }

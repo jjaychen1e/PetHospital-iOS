@@ -16,7 +16,7 @@ class LoginPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setTransparentNavigationBar()
+        setTransparentNavigationBarWith(backgroundColor: Asset.dynamicLightGrayBackground.color)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "继续", style: .done, target: self, action: #selector(tryToContinue))
         
         let doneButtonAppearance = UIBarButtonItemAppearance()
