@@ -115,15 +115,3 @@ extension DiseaseListViewController {
     }
 }
 
-extension DiseaseListViewController: UICollectionViewDelegate {
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        guard let menuItem = self.dataSource.itemIdentifier(for: indexPath) else { return }
-//
-//        collectionView.deselectItem(at: indexPath, animated: true)
-//
-//        if let viewController = menuItem.outlineViewController {
-//            navigationController?.pushViewController(viewController.init(), animated: true)
-//        }
-//
-//    }
-}
