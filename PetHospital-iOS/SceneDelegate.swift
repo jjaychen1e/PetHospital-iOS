@@ -19,8 +19,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
+        self.window = window
+        window.makeKeyAndVisible()
+        
+        let rootVC = UIViewController()
+        window.rootViewController = rootVC;
+        (UIApplication.shared.delegate as! AppDelegate).rootViewController = rootVC
+        
         let nvc = UINavigationController()
-        window.rootViewController = nvc
+        nvc.setNavigationBarHidden(true, animated: false)
+        (UIApplication.shared.delegate as! AppDelegate).rootNavigationController = nvc
+        
+        rootVC.addChild(nvc)
+        rootVC.view.addSubview(nvc.view)
+        nvc.didMove(toParent: rootVC)
+        nvc.view.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
         
         if LoginHelper.hasCachedLoginStatus() {
             nvc.setViewControllers([StoryboardScene.Main.mainTabBarController.instantiate()], animated: false)
@@ -31,14 +46,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     DispatchQueue.main.async {
                         ToastHelper.show(emoji: "⚠️", title: "身份信息认证失败", subtitle: "请尝试重新登录。")
                     }
+                } else {
+                    ToastHelper.show(emoji: "🎉", title: "登录成功", subtitle: "使用本地缓存登录成功。欢迎来到宠物医院。")
                 }
             }
         } else {
+            nvc.setNavigationBarHidden(false, animated: false)
             nvc.setViewControllers([StoryboardScene.Login.initialScene.instantiate()], animated: false)
         }
-        
-        self.window = window
-        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

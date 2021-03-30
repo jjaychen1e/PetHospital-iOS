@@ -38,55 +38,71 @@ class NetworkManager {
     /// We should provide a non-generic version if parameter is `nil`. And this method can only support GET.
     @discardableResult
     func fetch<T: Decodable>(endPoint: EndPoint, completionHandler: @escaping (T?) -> ()) -> DataRequest {
-        let request = AF.request(BaseAddress + endPoint.rawValue,
-                                 method: .get,
-                                 headers: nil)
-            .response { (data) in
-                guard data.error != nil else {
-                    print(data.error!)
+        fetch(fullURL: BaseAddress + endPoint.rawValue, completionHandler: completionHandler)
+    }
+    
+    @discardableResult
+    func fetch<T: Decodable, P: Encodable>(endPoint: EndPoint, method: HTTPMethod = .GET, parameters: P? = nil, completionHandler: @escaping (T?) -> ()) -> DataRequest {
+        fetch(fullURL: BaseAddress + endPoint.rawValue,
+              method: method,
+              parameters: parameters, completionHandler: completionHandler)
+    }
+    
+    /// We should provide a non-generic version if parameter is `nil`. And this method can only support GET.
+    @discardableResult
+    func fetch<T: Decodable>(fullURL: String, completionHandler: @escaping (T?) -> ()) -> DataRequest {
+        let request = AF.request(fullURL,
+                                 method: .get)
+            .response { (request) in
+                if let error = request.error {
+                    print(error)
                     completionHandler(nil)
                     return
                 }
                 
-                if let data = data.data {
+                if let data = request.data {
                     do {
                         let decodeResult = try JSONDecoder().decode(T.self, from: data)
                         completionHandler(decodeResult)
                     } catch {
-                        print("Error encoutered when decode. \(error)")
+                        print("Error encoutered when decode:\n- \(error).\n- \(request.request?.url?.absoluteString ?? "")\n- \(String(data: data, encoding: .utf8) ?? "")")
                         completionHandler(nil)
+                        return
                     }
                 } else {
                     completionHandler(nil)
+                    return
                 }
             }
         return DataRequest(request: request)
     }
     
     @discardableResult
-    func fetch<T: Decodable, P: Encodable>(endPoint: EndPoint, method: HTTPMethod = .GET, parameters: P? = nil, completionHandler: @escaping (T?) -> ()) -> DataRequest {
-        let request = AF.request(BaseAddress + endPoint.rawValue,
+    func fetch<T: Decodable, P: Encodable>(fullURL: String, method: HTTPMethod = .GET, parameters: P? = nil, completionHandler: @escaping (T?) -> ()) -> DataRequest {
+        let request = AF.request(fullURL,
                                  method: method.convertToAlamofireHTTPMethod(),
                                  parameters: parameters,
-                                 encoder: URLEncodedFormParameterEncoder.default,
-                                 headers: nil)
-            .response { (data) in
-                guard data.error != nil else {
-                    print(data.error!)
+                                 encoder: method == .POST ? JSONParameterEncoder.default : URLEncodedFormParameterEncoder.default)
+            .response { (request) in
+                if let error = request.error {
+                    print(error)
                     completionHandler(nil)
                     return
                 }
                 
-                if let data = data.data {
+                if let data = request.data {
                     do {
                         let decodeResult = try JSONDecoder().decode(T.self, from: data)
                         completionHandler(decodeResult)
+                        return
                     } catch {
-                        print("Error encoutered when decode. \(error)")
+                        print("Error encoutered when decode:\n- \(error).\n- \(request.request?.url?.absoluteString ?? "")\n- \(String(data: data, encoding: .utf8) ?? "")")
                         completionHandler(nil)
+                        return
                     }
                 } else {
                     completionHandler(nil)
+                    return
                 }
             }
         return DataRequest(request: request)

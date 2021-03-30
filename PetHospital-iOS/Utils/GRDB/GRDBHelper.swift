@@ -21,11 +21,17 @@ class GRDBHelper {
         do {
             try dbQueue.write { db in
                 try db.execute(sql: """
-                    CREATE TABLE IF NOT EXISTS user (
+                    CREATE TABLE IF NOT EXISTS login_result (
                         username TEXT PRIMARY KEY NOT NULL,
                         password TEXT NOT NULL,
-                        profile_url TEXT NOT NULL,
-                        token TEXT NOT NULL)
+                        token TEXT NOT NULL,
+                        social_user_id TEXT,
+                        id TEXT,
+                        user_mail TEXT,
+                        nickname TEXT,
+                        avatar TEXT,
+                        location TEXT,
+                        gender TEXT)
                     """)
             }
         } catch {

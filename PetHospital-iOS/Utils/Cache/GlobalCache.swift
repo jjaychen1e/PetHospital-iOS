@@ -9,10 +9,10 @@ import Foundation
 
 class GlobalCache {
     
-    var user: User?
+    var loginResult: LoginResult?
     
     var token: String? {
-        user?.token
+        loginResult?.token
     }
     
     static let shared: GlobalCache = {

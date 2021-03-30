@@ -23,6 +23,8 @@
 		637A8A4225FEEA680086ABEF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637A8A4125FEEA680086ABEF /* User.swift */; };
 		637A8A4625FEED430086ABEF /* ResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637A8A4525FEED430086ABEF /* ResultEntity.swift */; };
 		638D28F526116B0F00DC32B9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638D28F426116B0F00DC32B9 /* WebViewController.swift */; };
+		638D28F92611773200DC32B9 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638D28F82611773200DC32B9 /* URL+Extension.swift */; };
+		638D2908261190AA00DC32B9 /* GoogleSignIn.plist in Resources */ = {isa = PBXBuildFile; fileRef = 638D2907261190AA00DC32B9 /* GoogleSignIn.plist */; };
 		63A724C12608E7EE00A27695 /* RegisterPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A724C02608E7EE00A27695 /* RegisterPasswordViewController.swift */; };
 		63A724C42608E83100A27695 /* UIViewController+UINavigationBarItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A724C32608E83100A27695 /* UIViewController+UINavigationBarItem+Extension.swift */; };
 		63A724C82608EA1C00A27695 /* LoginPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A724C72608EA1C00A27695 /* LoginPasswordViewController.swift */; };
@@ -62,6 +64,8 @@
 		637A8A4125FEEA680086ABEF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		637A8A4525FEED430086ABEF /* ResultEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultEntity.swift; path = ../../../../ResultEntity.swift; sourceTree = "<group>"; };
 		638D28F426116B0F00DC32B9 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		638D28F82611773200DC32B9 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		638D2907261190AA00DC32B9 /* GoogleSignIn.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoogleSignIn.plist; sourceTree = "<group>"; };
 		63A724C02608E7EE00A27695 /* RegisterPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPasswordViewController.swift; sourceTree = "<group>"; };
 		63A724C32608E83100A27695 /* UIViewController+UINavigationBarItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UINavigationBarItem+Extension.swift"; sourceTree = "<group>"; };
 		63A724C72608EA1C00A27695 /* LoginPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				63A724B42608D3F900A27695 /* UIKit */,
+				638D28F82611773200DC32B9 /* URL+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 				63C9B1EC25F88C6E0093DD91 /* Assets.xcassets */,
 				63C9B1EE25F88C6E0093DD91 /* LaunchScreen.storyboard */,
 				63250375260B35C200E04F6A /* swiftgen.yml */,
+				638D2907261190AA00DC32B9 /* GoogleSignIn.plist */,
 				63C9B1F125F88C6E0093DD91 /* Info.plist */,
 			);
 			path = "PetHospital-iOS";
@@ -359,6 +365,7 @@
 				63C9B1DE25F88C6C0093DD91 /* Resources */,
 				9DC779F849075C569E977877 /* [CP] Embed Pods Frameworks */,
 				63250388260B38D400E04F6A /* ShellScript */,
+				1D9C8F1858C5BBEED0558AD0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -413,6 +420,7 @@
 				63C9B1EB25F88C6C0093DD91 /* Main.storyboard in Resources */,
 				63A84A4C25F89ABE00AE8628 /* Exam.storyboard in Resources */,
 				63A84A4725F89A1200AE8628 /* CaseStudy.storyboard in Resources */,
+				638D2908261190AA00DC32B9 /* GoogleSignIn.plist in Resources */,
 				63A84A4225F8996300AE8628 /* RolePlaying.storyboard in Resources */,
 				63250376260B35C200E04F6A /* swiftgen.yml in Resources */,
 			);
@@ -441,6 +449,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1D9C8F1858C5BBEED0558AD0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PetHospital-iOS/Pods-PetHospital-iOS-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PetHospital-iOS/Pods-PetHospital-iOS-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PetHospital-iOS/Pods-PetHospital-iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		63250388260B38D400E04F6A /* ShellScript */ = {
@@ -489,6 +514,7 @@
 				6325038F260B3BCE00E04F6A /* CircularLoadingView.swift in Sources */,
 				63C9B1E425F88C6C0093DD91 /* AppDelegate.swift in Sources */,
 				63E614E9260829BD00F259B6 /* LoginViewController.swift in Sources */,
+				638D28F92611773200DC32B9 /* URL+Extension.swift in Sources */,
 				6344B935260B5CD600B31986 /* GRDBHelper.swift in Sources */,
 				63A724D42608F6B900A27695 /* ToastView.swift in Sources */,
 				63C9B1E625F88C6C0093DD91 /* SceneDelegate.swift in Sources */,

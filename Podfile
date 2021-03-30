@@ -10,4 +10,5 @@ target 'PetHospital-iOS' do
   pod 'Kingfisher', '~> 6.0'
   pod 'SwiftGen', '~> 6.0'
   pod 'GRDB.swift'
+  pod 'GoogleSignIn'
 end

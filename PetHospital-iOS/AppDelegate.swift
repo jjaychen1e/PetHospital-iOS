@@ -6,14 +6,28 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var rootViewController: UIViewController!
+    var rootNavigationController: UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        // Initialize google sign-in
+        if let path = Bundle.main.path(forResource: "GoogleSignIn", ofType: "plist"),
+           let keys = NSDictionary(contentsOfFile: path),
+           let clientID = keys["CLIENT_ID"] as? String {
+            GIDSignIn.sharedInstance().clientID = clientID
+        }
+        
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
     }
 
     // MARK: UISceneSession Lifecycle

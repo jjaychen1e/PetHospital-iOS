@@ -7,10 +7,18 @@
 
 import Foundation
 
-let BaseAddress = ""
+let BaseAddress = "http://localhost:8080"
 
 enum EndPoint: String {
-    case login = "/aouth/register/all"
-    case thridPartyLogin = "/aouth/login/"
-    case departmentInfo = "/usr/getLayout"
+    case register                    = "/oauth/register/all"
+    case loginCheck                  = "/oauth/login/check"
+    case login                       = "/oauth/login/normal"
+    case googleLogin                 = "/oauth/login/app/google"
+    case departmentInfo              = "/usr/getLayout"
+    
+    var fullEndPointURL: String {
+        get {
+            BaseAddress + self.rawValue
+        }
+    }
 }

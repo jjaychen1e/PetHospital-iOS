@@ -27,11 +27,11 @@ class TouringViewController: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         self.navigationItem.searchController = searchController
         
-        NetworkManager.shared.fetch(endPoint: .departmentInfo) { (departments: [Department]?) in
-            if let departments = departments {
-                self.departmentViewModel.departments = departments
-            }
-        }
+//        NetworkManager.shared.fetch(endPoint: .departmentInfo) { (result: ResultEntity<[Department]>?) in
+//            if let result = result {
+//                self.departmentViewModel.departments = result.data
+//            }
+//        }
         
 //        var departments = Array<Department>()
 //        for i in 0..<100 {

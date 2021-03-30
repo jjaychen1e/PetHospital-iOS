@@ -23,19 +23,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我们将使用您的用户名来注册账户。请提供由英文和数字字符组成的用户名，长度至少6位，且不得超过10位。" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3b-z4-4gY">
-                                <rect key="frame" x="39" y="108.66666666666669" width="312" height="61"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我们将使用您的学号来注册账户。请提供由十一位数字组成的账号。" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3b-z4-4gY">
+                                <rect key="frame" x="39" y="108.66666666666667" width="312" height="40.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="example" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fzu-aX-9fR">
-                                <rect key="frame" x="95" y="229.66666666666666" width="200" height="33.999999999999972"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="10175101148" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fzu-aX-9fR">
+                                <rect key="frame" x="95" y="189.33333333333334" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="ZhX-AY-96a"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next" textContentType="username"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" textContentType="username"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="c5f-Bt-X4a">
                                 <rect key="frame" x="64.5" y="186" width="285.5" height="34"/>
@@ -65,7 +65,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2q-gO-UbF">
-                                <rect key="frame" x="59.333333333333343" y="279.66666666666669" width="271.33333333333326" height="33.666666666666686"/>
+                                <rect key="frame" x="59.333333333333343" y="239.33333333333334" width="271.33333333333326" height="33.666666666666657"/>
                                 <string key="text">如果您已拥有账号，可以直接登录。
 您也可以选择使用支持的第三方平台登录。</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -116,7 +116,7 @@
                             <constraint firstItem="e4x-IU-bGQ" firstAttribute="centerX" secondItem="yE6-ag-a0Z" secondAttribute="centerX" id="hkg-cg-sfR"/>
                             <constraint firstItem="yE6-ag-a0Z" firstAttribute="bottom" secondItem="e4x-IU-bGQ" secondAttribute="bottom" constant="60" id="mzW-Ej-Ht3"/>
                             <constraint firstItem="c5f-Bt-X4a" firstAttribute="top" secondItem="j3b-z4-4gY" secondAttribute="bottom" constant="60" id="qBo-tp-rTT"/>
-                            <constraint firstItem="Fzu-aX-9fR" firstAttribute="top" secondItem="j3b-z4-4gY" secondAttribute="bottom" constant="60" id="rTS-pu-3j3"/>
+                            <constraint firstItem="Fzu-aX-9fR" firstAttribute="top" secondItem="j3b-z4-4gY" secondAttribute="bottom" constant="40" id="rTS-pu-3j3"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -148,7 +148,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请尽量同时使用数字、字母和特殊字符作为您的密码。密码应至少包含8个字符，且不超过20个字符。" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pp-Xm-GeF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请尽量同时使用数字、字母和特殊字符作为您的密码。密码应至少包含8个字符，且不超过50个字符。" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pp-Xm-GeF">
                                 <rect key="frame" x="39" y="109" width="312" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>

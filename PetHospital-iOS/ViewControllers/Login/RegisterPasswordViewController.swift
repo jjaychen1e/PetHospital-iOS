@@ -13,11 +13,15 @@ class RegisterPasswordViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     private var continueBarButtonItem: UIBarButtonItem!
     
+    var username: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = Asset.dynamicLightGrayBackground.color
         setTransparentNavigationBarWith(backgroundColor: Asset.dynamicLightGrayBackground.color)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "继续", style: .done, target: self, action: #selector(tryToContinue))
+        self.continueBarButtonItem = UIBarButtonItem(title: "继续", style: .done, target: self, action: #selector(tryToContinue))
+        navigationItem.rightBarButtonItem = continueBarButtonItem
         
         let doneButtonAppearance = UIBarButtonItemAppearance()
         doneButtonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.systemBlue,
@@ -40,29 +44,42 @@ class RegisterPasswordViewController: UIViewController {
     private func checkPasswordInLocal(password: String?) -> Bool {
         guard let password = password else { return false }
         
-        return password.count >= 8 && password.count <= 20 && password.allSatisfy({ (character) -> Bool in
+        return password.count >= 8 && password.count <= 50 && password.allSatisfy({ (character) -> Bool in
             character.isASCII
         })
     }
     
-    private func checkRegisterWith(username: String, password: String?, completionHandler: @escaping (Bool) -> ()) {
+    private func checkRegisterWith(username: String, password: String, completionHandler: @escaping (Bool) -> ()) {
         guard checkPasswordInLocal(password: password) else {
-            ToastHelper.show(emoji: "🙅", title: "密码格式不正确", subtitle: "请保证密码至少包含8个字符，且不超过20个字符。")
+            ToastHelper.show(emoji: "🙅", title: "密码格式不正确", subtitle: "请保证密码至少包含8个字符，且不超过50个字符。")
             return
         }
         // ... Ask the server
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: UIHostingController(rootView: CircularLoadingView()).view!)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.navigationItem.rightBarButtonItem = self.continueBarButtonItem
-            completionHandler(true)
+        NetworkManager.shared.fetch(endPoint: .register, method: .POST,
+                                    parameters: LoginParameter(username: username, password: password)) { (result: ResultEntity<Bool>?) in
+            if let result = result {
+                if result.code == .success, let data = result.data, data == true {
+                    LoginHelper.login(with: LoginParameter(username: username, password: password)) { (result) in
+                        self.navigationItem.rightBarButtonItem = self.continueBarButtonItem
+                        completionHandler(result)
+                        return
+                    }
+                } else {
+                    // 注册失败.. 可能是刚好被人注册了
+                    print(result)
+                    completionHandler(false)
+                    return
+                }
+            }
         }
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: UIHostingController(rootView: CircularLoadingView().background(Color(Asset.dynamicLightGrayBackground.color))).view!)
     }
     
     @objc
     private func tryToContinue() {
-        checkRegisterWith(username: "", password: passwordTextField.text) { (success) in
+        checkRegisterWith(username: username, password: passwordTextField.text ?? "") { (success) in
             if success {
+                ToastHelper.show(emoji: "🎉", title: "登录成功", subtitle: "使用账号密码登录成功。欢迎来到宠物医院。")
                 self.navigationController?.setViewControllers([StoryboardScene.Main.mainTabBarController.instantiate()], animated: true)
                 self.navigationController?.setNavigationBarHidden(true, animated: true)
             } else {

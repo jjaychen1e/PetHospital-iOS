@@ -60,13 +60,29 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-//        if let url = navigationAction.request.url {
-//            if url.host == "www.apple.com" {
-//                UIApplication.shared.open(url)
-//                decisionHandler(.cancel)
-//                return
-//            }
-//        }
+        if let url = navigationAction.request.url {
+            // 第三方登录
+            if url.host == "..../#/register" {
+                if let queryParameter = url.queryParameters, let socialUserID = queryParameter["socialUsrId"] {
+                    self.dismiss(animated: true) {
+                        print(socialUserID)
+                    }
+                }
+                decisionHandler(.cancel)
+                return
+            } else if url.host == "..../#/login" {
+                if let queryParameter = url.queryParameters, let stuID = queryParameter["stuId"], let token = queryParameter["token"] {
+                    self.dismiss(animated: true) {
+                        print(stuID)
+                        print(token)
+                        if let nvc = (UIApplication.shared.delegate as? AppDelegate)?.rootNavigationController {
+                            nvc.setNavigationBarHidden(true, animated: false)
+                            nvc.setViewControllers([StoryboardScene.Main.mainTabBarController.instantiate()], animated: true)
+                        }
+                    }
+                }
+            }
+        }
 
         decisionHandler(.allow)
     }

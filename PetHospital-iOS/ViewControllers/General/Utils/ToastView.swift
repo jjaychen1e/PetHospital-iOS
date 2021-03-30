@@ -68,11 +68,24 @@ fileprivate class ToastViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        toastView.transform = CGAffineTransform(translationX: 0, y: -toastView.frame.height - UIApplication.shared.windows.first(where: { $0.isKeyWindow })!.safeAreaInsets.top)
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut) {
+            self.toastView.transform = .identity
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.hide(animated: true, completionHandler: nil)
+        }
+    }
     
     override func viewDidLoad() {
         view.isUserInteractionEnabled = false
         toastView = UIHostingController(rootView: ToastView(toastViewModel: toastViewModel)).view!
         self.view.addSubview(toastView)
+        toastView.backgroundColor = .clear
         toastView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(UIApplication.shared.windows.first(where: { $0.isKeyWindow })!.safeAreaInsets.top)
@@ -81,26 +94,10 @@ fileprivate class ToastViewController: UIViewController {
         }
     }
     
-    override func viewDidLayoutSubviews() {
-        toastView.center = .init(x: toastView.center.x, y: toastView.center.y - toastView.frame.height - UIApplication.shared.windows.first(where: { $0.isKeyWindow })!.safeAreaInsets.top)
-
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut) {
-            if let toastView = self.toastView {
-                toastView.center = .init(x: self.toastView.center.x, y: toastView.center.y + toastView.frame.height + UIApplication.shared.windows.first(where: { $0.isKeyWindow })!.safeAreaInsets.top)
-            }
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.hide(animated: true, completionHandler: nil)
-        }
-    }
-    
     func hide(animated: Bool, completionHandler: ((Bool) -> ())? = nil) {
         if animated {
-            UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut) {
-                if let toastView = self.toastView {
-                    toastView.center = .init(x: self.toastView.center.x, y: toastView.center.y - toastView.frame.height - UIApplication.shared.windows.first(where: { $0.isKeyWindow })!.safeAreaInsets.top)
-                }
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut) {
+                self.toastView.transform = CGAffineTransform(translationX: 0, y: -self.toastView.frame.height - UIApplication.shared.windows.first(where: { $0.isKeyWindow })!.safeAreaInsets.top)
             } completion: { (result) in
                 if result {
                     self.removeFromParent()
@@ -123,7 +120,7 @@ class ToastHelper {
     }
     
     static func show(emoji: String? = nil, title: String, subtitle: String? = nil) {
-        if let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow }), let rootViewController = keyWindow.rootViewController {
+        if let rootViewController = (UIApplication.shared.delegate as! AppDelegate).rootViewController {
             ToastHelper.toastViewController?.hide(animated: false)
             ToastHelper.toastViewController = ToastViewController(emoji: emoji, title: title, subtitle: subtitle)
             rootViewController.addChild(ToastHelper.toastViewController!)
