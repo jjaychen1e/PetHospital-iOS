@@ -55,7 +55,6 @@ extension DiseaseListViewController {
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.backgroundColor = .systemGroupedBackground
         self.collectionView = collectionView
-        collectionView.delegate = self
     }
     
     private func initialSnapshot() -> NSDiffableDataSourceSectionSnapshot<Disease> {
