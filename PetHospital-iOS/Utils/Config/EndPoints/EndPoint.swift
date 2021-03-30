@@ -7,14 +7,19 @@
 
 import Foundation
 
-let BaseAddress = "http://localhost:8080"
+let BaseAddress = "http://192.168.31.79:8080"
 
 enum EndPoint: String {
     case register                    = "/oauth/register/all"
     case loginCheck                  = "/oauth/login/check"
     case login                       = "/oauth/login/normal"
     case googleLogin                 = "/oauth/login/app/google"
-    case departmentInfo              = "/usr/getLayout"
+    
+    
+    case allDepartments              = "/usr/getLayout"
+    
+    
+    case allDiseases                 = "/disease/findAll"
     
     var fullEndPointURL: String {
         get {

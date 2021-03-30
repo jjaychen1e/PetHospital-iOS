@@ -28,7 +28,7 @@
         <!--病例学习-->
         <scene sceneID="dh9-xc-FI5">
             <objects>
-                <viewController id="FQX-VN-vCt" sceneMemberID="viewController">
+                <viewController id="FQX-VN-vCt" customClass="DiseaseListViewController" customModule="PetHospital_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FIn-5D-Tam">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

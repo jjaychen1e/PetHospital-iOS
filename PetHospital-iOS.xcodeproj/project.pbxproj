@@ -22,6 +22,13 @@
 		6347702425F908CE00BF8612 /* RolePlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6347702325F908CE00BF8612 /* RolePlayingView.swift */; };
 		637A8A4225FEEA680086ABEF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637A8A4125FEEA680086ABEF /* User.swift */; };
 		637A8A4625FEED430086ABEF /* ResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637A8A4525FEED430086ABEF /* ResultEntity.swift */; };
+		637D12482612ECF40099AA83 /* Disease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D12472612ECF40099AA83 /* Disease.swift */; };
+		637D12512612EEC90099AA83 /* CaseStudy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637D12502612EEC90099AA83 /* CaseStudy.storyboard */; };
+		637D12552612EEE60099AA83 /* Exam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637D12542612EEE60099AA83 /* Exam.storyboard */; };
+		637D12592612EEFE0099AA83 /* RolePlaying.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637D12582612EEFE0099AA83 /* RolePlaying.storyboard */; };
+		637D125D2612EF0B0099AA83 /* Touring.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637D125C2612EF0B0099AA83 /* Touring.storyboard */; };
+		637D12602612EF5A0099AA83 /* DiseaseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D125F2612EF5A0099AA83 /* DiseaseListViewController.swift */; };
+		637D12632612F3A80099AA83 /* DiseaseListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D12622612F3A80099AA83 /* DiseaseListCell.swift */; };
 		638D28F526116B0F00DC32B9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638D28F426116B0F00DC32B9 /* WebViewController.swift */; };
 		638D28F92611773200DC32B9 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638D28F82611773200DC32B9 /* URL+Extension.swift */; };
 		638D2908261190AA00DC32B9 /* GoogleSignIn.plist in Resources */ = {isa = PBXBuildFile; fileRef = 638D2907261190AA00DC32B9 /* GoogleSignIn.plist */; };
@@ -29,10 +36,6 @@
 		63A724C42608E83100A27695 /* UIViewController+UINavigationBarItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A724C32608E83100A27695 /* UIViewController+UINavigationBarItem+Extension.swift */; };
 		63A724C82608EA1C00A27695 /* LoginPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A724C72608EA1C00A27695 /* LoginPasswordViewController.swift */; };
 		63A724D42608F6B900A27695 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A724D32608F6B900A27695 /* ToastView.swift */; };
-		63A84A3D25F896F900AE8628 /* Touring.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A84A3B25F896F900AE8628 /* Touring.storyboard */; };
-		63A84A4225F8996300AE8628 /* RolePlaying.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A84A4025F8996300AE8628 /* RolePlaying.storyboard */; };
-		63A84A4725F89A1200AE8628 /* CaseStudy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A84A4525F89A1200AE8628 /* CaseStudy.storyboard */; };
-		63A84A4C25F89ABE00AE8628 /* Exam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A84A4A25F89ABE00AE8628 /* Exam.storyboard */; };
 		63A84A5025F89F5C00AE8628 /* TouringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A84A4F25F89F5C00AE8628 /* TouringViewController.swift */; };
 		63C9B1E425F88C6C0093DD91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9B1E325F88C6C0093DD91 /* AppDelegate.swift */; };
 		63C9B1E625F88C6C0093DD91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9B1E525F88C6C0093DD91 /* SceneDelegate.swift */; };
@@ -63,6 +66,13 @@
 		6347702325F908CE00BF8612 /* RolePlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolePlayingView.swift; sourceTree = "<group>"; };
 		637A8A4125FEEA680086ABEF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		637A8A4525FEED430086ABEF /* ResultEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultEntity.swift; path = ../../../../ResultEntity.swift; sourceTree = "<group>"; };
+		637D12472612ECF40099AA83 /* Disease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disease.swift; sourceTree = "<group>"; };
+		637D12502612EEC90099AA83 /* CaseStudy.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CaseStudy.storyboard; sourceTree = "<group>"; };
+		637D12542612EEE60099AA83 /* Exam.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Exam.storyboard; sourceTree = "<group>"; };
+		637D12582612EEFE0099AA83 /* RolePlaying.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RolePlaying.storyboard; sourceTree = "<group>"; };
+		637D125C2612EF0B0099AA83 /* Touring.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Touring.storyboard; sourceTree = "<group>"; };
+		637D125F2612EF5A0099AA83 /* DiseaseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseListViewController.swift; sourceTree = "<group>"; };
+		637D12622612F3A80099AA83 /* DiseaseListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseListCell.swift; sourceTree = "<group>"; };
 		638D28F426116B0F00DC32B9 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		638D28F82611773200DC32B9 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		638D2907261190AA00DC32B9 /* GoogleSignIn.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoogleSignIn.plist; sourceTree = "<group>"; };
@@ -70,10 +80,6 @@
 		63A724C32608E83100A27695 /* UIViewController+UINavigationBarItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UINavigationBarItem+Extension.swift"; sourceTree = "<group>"; };
 		63A724C72608EA1C00A27695 /* LoginPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordViewController.swift; sourceTree = "<group>"; };
 		63A724D32608F6B900A27695 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
-		63A84A3C25F896F900AE8628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "PetHospital-iOS/Base.lproj/Touring.storyboard"; sourceTree = "<group>"; };
-		63A84A4125F8996300AE8628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "PetHospital-iOS/Base.lproj/RolePlaying.storyboard"; sourceTree = "<group>"; };
-		63A84A4625F89A1200AE8628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "PetHospital-iOS/Base.lproj/CaseStudy.storyboard"; sourceTree = "<group>"; };
-		63A84A4B25F89ABE00AE8628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "PetHospital-iOS/Base.lproj/Exam.storyboard"; sourceTree = "<group>"; };
 		63A84A4F25F89F5C00AE8628 /* TouringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouringViewController.swift; sourceTree = "<group>"; };
 		63C9B1E025F88C6C0093DD91 /* PetHospital-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PetHospital-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C9B1E325F88C6C0093DD91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +175,14 @@
 			path = Basic;
 			sourceTree = "<group>";
 		};
+		637D12462612EC4D0099AA83 /* CaseStudy */ = {
+			isa = PBXGroup;
+			children = (
+				637D12472612ECF40099AA83 /* Disease.swift */,
+			);
+			path = CaseStudy;
+			sourceTree = "<group>";
+		};
 		638D28F326116AE800DC32B9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +222,7 @@
 		63A84A5225F8A20500AE8628 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				637D12462612EC4D0099AA83 /* CaseStudy */,
 				637A8A4025FEE9C10086ABEF /* Basic */,
 				633572F725F90C3A00C8F882 /* RolePlaying */,
 				6347700D25F8D83900BF8612 /* Touring */,
@@ -231,7 +246,7 @@
 		63A84A5425F8A21E00AE8628 /* Touring */ = {
 			isa = PBXGroup;
 			children = (
-				63A84A3B25F896F900AE8628 /* Touring.storyboard */,
+				637D125C2612EF0B0099AA83 /* Touring.storyboard */,
 				63A84A4F25F89F5C00AE8628 /* TouringViewController.swift */,
 				6347701A25F8DFF200BF8612 /* TouringListView.swift */,
 			);
@@ -241,7 +256,7 @@
 		63A84A5525F8A22800AE8628 /* RolePlaying */ = {
 			isa = PBXGroup;
 			children = (
-				63A84A4025F8996300AE8628 /* RolePlaying.storyboard */,
+				637D12582612EEFE0099AA83 /* RolePlaying.storyboard */,
 				6347702325F908CE00BF8612 /* RolePlayingView.swift */,
 				633572F425F90AF500C8F882 /* RolePlayingViewController.swift */,
 			);
@@ -251,7 +266,9 @@
 		63A84A5625F8A23C00AE8628 /* CaseStudy */ = {
 			isa = PBXGroup;
 			children = (
-				63A84A4525F89A1200AE8628 /* CaseStudy.storyboard */,
+				637D12502612EEC90099AA83 /* CaseStudy.storyboard */,
+				637D125F2612EF5A0099AA83 /* DiseaseListViewController.swift */,
+				637D12622612F3A80099AA83 /* DiseaseListCell.swift */,
 			);
 			path = CaseStudy;
 			sourceTree = "<group>";
@@ -259,7 +276,7 @@
 		63A84A5725F8A24A00AE8628 /* Exam */ = {
 			isa = PBXGroup;
 			children = (
-				63A84A4A25F89ABE00AE8628 /* Exam.storyboard */,
+				637D12542612EEE60099AA83 /* Exam.storyboard */,
 			);
 			path = Exam;
 			sourceTree = "<group>";
@@ -415,14 +432,14 @@
 			files = (
 				63E614ED26082DF400F259B6 /* Login.storyboard in Resources */,
 				63C9B1F025F88C6E0093DD91 /* LaunchScreen.storyboard in Resources */,
-				63A84A3D25F896F900AE8628 /* Touring.storyboard in Resources */,
+				637D12552612EEE60099AA83 /* Exam.storyboard in Resources */,
 				63C9B1ED25F88C6E0093DD91 /* Assets.xcassets in Resources */,
 				63C9B1EB25F88C6C0093DD91 /* Main.storyboard in Resources */,
-				63A84A4C25F89ABE00AE8628 /* Exam.storyboard in Resources */,
-				63A84A4725F89A1200AE8628 /* CaseStudy.storyboard in Resources */,
+				637D125D2612EF0B0099AA83 /* Touring.storyboard in Resources */,
 				638D2908261190AA00DC32B9 /* GoogleSignIn.plist in Resources */,
-				63A84A4225F8996300AE8628 /* RolePlaying.storyboard in Resources */,
+				637D12512612EEC90099AA83 /* CaseStudy.storyboard in Resources */,
 				63250376260B35C200E04F6A /* swiftgen.yml in Resources */,
+				637D12592612EEFE0099AA83 /* RolePlaying.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +526,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				637D12602612EF5A0099AA83 /* DiseaseListViewController.swift in Sources */,
 				63A84A5025F89F5C00AE8628 /* TouringViewController.swift in Sources */,
 				637A8A4625FEED430086ABEF /* ResultEntity.swift in Sources */,
 				6325038F260B3BCE00E04F6A /* CircularLoadingView.swift in Sources */,
@@ -523,10 +541,12 @@
 				6347701B25F8DFF200BF8612 /* TouringListView.swift in Sources */,
 				638D28F526116B0F00DC32B9 /* WebViewController.swift in Sources */,
 				63250372260B336C00E04F6A /* Assets.swift in Sources */,
+				637D12482612ECF40099AA83 /* Disease.swift in Sources */,
 				63A724C82608EA1C00A27695 /* LoginPasswordViewController.swift in Sources */,
 				6325037A260B35EF00E04F6A /* Storyboard Segues.swift in Sources */,
 				63E614DA2608190200F259B6 /* EndPoint.swift in Sources */,
 				63A724C42608E83100A27695 /* UIViewController+UINavigationBarItem+Extension.swift in Sources */,
+				637D12632612F3A80099AA83 /* DiseaseListCell.swift in Sources */,
 				633572F525F90AF500C8F882 /* RolePlayingViewController.swift in Sources */,
 				63F5D9262611596400832200 /* ContinueWithButton.swift in Sources */,
 				637A8A4225FEEA680086ABEF /* User.swift in Sources */,
@@ -542,38 +562,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		63A84A3B25F896F900AE8628 /* Touring.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63A84A3C25F896F900AE8628 /* Base */,
-			);
-			name = Touring.storyboard;
-			sourceTree = "<group>";
-		};
-		63A84A4025F8996300AE8628 /* RolePlaying.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63A84A4125F8996300AE8628 /* Base */,
-			);
-			name = RolePlaying.storyboard;
-			sourceTree = "<group>";
-		};
-		63A84A4525F89A1200AE8628 /* CaseStudy.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63A84A4625F89A1200AE8628 /* Base */,
-			);
-			name = CaseStudy.storyboard;
-			sourceTree = "<group>";
-		};
-		63A84A4A25F89ABE00AE8628 /* Exam.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63A84A4B25F89ABE00AE8628 /* Base */,
-			);
-			name = Exam.storyboard;
-			sourceTree = "<group>";
-		};
 		63C9B1E925F88C6C0093DD91 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
