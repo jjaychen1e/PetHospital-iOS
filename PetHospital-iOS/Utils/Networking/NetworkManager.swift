@@ -65,7 +65,7 @@ class NetworkManager {
                         let decodeResult = try JSONDecoder().decode(T.self, from: data)
                         completionHandler(decodeResult)
                     } catch {
-                        print("Error encoutered when decode:\n- \(error).\n- \(request.request?.url?.absoluteString ?? "")\n- \(String(data: data, encoding: .utf8) ?? "")")
+                        print("Error encoutered when decode:\n - \(error).\n - URL: \(request.request?.url?.absoluteString ?? "nil")\n - Decoded string from data: \(String(data: data, encoding: .utf8) ?? "nil")")
                         completionHandler(nil)
                         return
                     }
@@ -96,7 +96,7 @@ class NetworkManager {
                         completionHandler(decodeResult)
                         return
                     } catch {
-                        print("Error encoutered when decode:\n- \(error).\n- \(request.request?.url?.absoluteString ?? "")\n- \(String(data: data, encoding: .utf8) ?? "")")
+                        print("Error encoutered when decode:\n - \(error).\n - URL: \(request.request?.url?.absoluteString ?? "nil")\n - Decoded string from data: \(String(data: data, encoding: .utf8) ?? "nil")")
                         completionHandler(nil)
                         return
                     }
