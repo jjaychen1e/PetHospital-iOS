@@ -13,6 +13,7 @@
 		6313A8E526144FB100C82767 /* ExamContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6313A8E426144FB100C82767 /* ExamContentConfiguration.swift */; };
 		6313A8EB2614501000C82767 /* ExamCardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6313A8EA2614501000C82767 /* ExamCardContentView.swift */; };
 		6314213026034D0A00F7D8E2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6314212F26034D0A00F7D8E2 /* NetworkManager.swift */; };
+		6314DEB726198BA100AAB97C /* ExamPaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6314DEB626198BA100AAB97C /* ExamPaper.swift */; };
 		63250372260B336C00E04F6A /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63250371260B336C00E04F6A /* Assets.swift */; };
 		63250376260B35C200E04F6A /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 63250375260B35C200E04F6A /* swiftgen.yml */; };
 		6325037A260B35EF00E04F6A /* Storyboard Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63250378260B35EF00E04F6A /* Storyboard Segues.swift */; };
@@ -21,7 +22,6 @@
 		633572F525F90AF500C8F882 /* RolePlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633572F425F90AF500C8F882 /* RolePlayingViewController.swift */; };
 		633572F925F90C4400C8F882 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633572F825F90C4400C8F882 /* Role.swift */; };
 		633DA0FF26188AA400C3D7AF /* ExamListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633DA0FE26188AA400C3D7AF /* ExamListCard.swift */; };
-		633DA1042618A6EC00C3D7AF /* ExamPaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633DA1032618A6EC00C3D7AF /* ExamPaper.swift */; };
 		633DA1082618A92100C3D7AF /* ExamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633DA1072618A92100C3D7AF /* ExamDetailViewController.swift */; };
 		633DA10C2618AAD400C3D7AF /* ExamQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633DA10B2618AAD400C3D7AF /* ExamQuestionViewController.swift */; };
 		633DA10F26197B7E00C3D7AF /* UIButton+BackgroundColorWithState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633DA10E26197B7E00C3D7AF /* UIButton+BackgroundColorWithState.swift */; };
@@ -66,6 +66,7 @@
 		6313A8E426144FB100C82767 /* ExamContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamContentConfiguration.swift; sourceTree = "<group>"; };
 		6313A8EA2614501000C82767 /* ExamCardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamCardContentView.swift; sourceTree = "<group>"; };
 		6314212F26034D0A00F7D8E2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6314DEB626198BA100AAB97C /* ExamPaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamPaper.swift; sourceTree = "<group>"; };
 		63250371260B336C00E04F6A /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = SOURCE_ROOT; };
 		63250375260B35C200E04F6A /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
 		63250378260B35EF00E04F6A /* Storyboard Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard Segues.swift"; sourceTree = SOURCE_ROOT; };
@@ -74,7 +75,6 @@
 		633572F425F90AF500C8F882 /* RolePlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolePlayingViewController.swift; sourceTree = "<group>"; };
 		633572F825F90C4400C8F882 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		633DA0FE26188AA400C3D7AF /* ExamListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamListCard.swift; sourceTree = "<group>"; };
-		633DA1032618A6EC00C3D7AF /* ExamPaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExamPaper.swift; path = ../../../../ExamPaper.swift; sourceTree = "<group>"; };
 		633DA1072618A92100C3D7AF /* ExamDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDetailViewController.swift; sourceTree = "<group>"; };
 		633DA10B2618AAD400C3D7AF /* ExamQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamQuestionViewController.swift; sourceTree = "<group>"; };
 		633DA10E26197B7E00C3D7AF /* UIButton+BackgroundColorWithState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+BackgroundColorWithState.swift"; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				6313A8DF26144B1000C82767 /* Exam.swift */,
-				633DA1032618A6EC00C3D7AF /* ExamPaper.swift */,
+				6314DEB626198BA100AAB97C /* ExamPaper.swift */,
 			);
 			path = Exam;
 			sourceTree = "<group>";
@@ -586,10 +586,10 @@
 				63C9B1E425F88C6C0093DD91 /* AppDelegate.swift in Sources */,
 				6313A8DC26144ABF00C82767 /* ExamListViewController.swift in Sources */,
 				63E614E9260829BD00F259B6 /* LoginViewController.swift in Sources */,
-				633DA1042618A6EC00C3D7AF /* ExamPaper.swift in Sources */,
 				633DA1082618A92100C3D7AF /* ExamDetailViewController.swift in Sources */,
 				638D28F92611773200DC32B9 /* URL+Extension.swift in Sources */,
 				6344B935260B5CD600B31986 /* GRDBHelper.swift in Sources */,
+				6314DEB726198BA100AAB97C /* ExamPaper.swift in Sources */,
 				63A724D42608F6B900A27695 /* ToastView.swift in Sources */,
 				63C9B1E625F88C6C0093DD91 /* SceneDelegate.swift in Sources */,
 				6325037B260B35EF00E04F6A /* Storyboard Scenes.swift in Sources */,
