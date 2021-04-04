@@ -80,7 +80,7 @@ class ExamQuestionViewController: UIViewController {
             confirmButton.snp.makeConstraints { (make) in
                 make.leading.trailing.equalToSuperview().inset(16)
                 make.top.equalTo(choicesStackView.snp.bottom).offset(44)
-                make.bottom.equalTo(scrollView).offset(16)
+                make.bottom.equalTo(scrollView).offset(24)
                 make.height.equalTo(50)
             }
             

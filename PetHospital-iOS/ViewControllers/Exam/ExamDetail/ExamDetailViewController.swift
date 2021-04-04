@@ -124,7 +124,7 @@ class ExamDetailViewController: UIViewController {
                 make.leading.trailing.equalToSuperview()
                 make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
                 make.bottom.equalTo(pageVC.view.snp.top)
-                make.height.equalTo(110)
+                make.height.equalTo(self.view.snp.height).multipliedBy(0.25)
             }
             
             self.configureDataSource()

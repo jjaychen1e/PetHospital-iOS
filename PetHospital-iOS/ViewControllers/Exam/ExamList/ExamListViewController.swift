@@ -74,6 +74,7 @@ extension ExamListViewController {
             // The custom cell's updateConfiguration(using:) method will assign the
             // content configuration to the cell
             cell.exam = exam
+            cell.automaticallyUpdatesBackgroundConfiguration = false
             cell.tapAction = { [weak self] in
                 if let self = self {
                     let examVC = ExamDetailViewController()

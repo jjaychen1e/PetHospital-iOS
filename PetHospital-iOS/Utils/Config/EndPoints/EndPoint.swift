@@ -15,12 +15,11 @@ enum EndPoint: String {
     case login                       = "/oauth/login/normal"
     case googleLogin                 = "/oauth/login/app/google"
     
-    
     case allDepartments              = "/usr/getLayout"
-    
     
     case allDiseases                 = "/disease/findAll"
     
+    case findDiseaseCase             = "/case/findAll"
     
     case allExams                    = "/exam/findAvailableExams"
     case saveExamResult              = "/exam/saveScore"
