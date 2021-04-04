@@ -40,6 +40,7 @@ class ExamCardContentView: UIView, UIContentView {
     
     private func setupAllViews() {
         cardView = UIHostingController(rootView: ExamListCard(viewModel: cardViewModel)).view!
+        cardView.backgroundColor = .clear
         addSubview(cardView)
         cardView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()

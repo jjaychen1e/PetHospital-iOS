@@ -22,5 +22,7 @@ class ExamCardListCell: UICollectionViewListCell {
 
         // Set content configuration in order to update custom content view
         contentConfiguration = newConfiguration
+        
+        backgroundConfiguration = .clear()
     }
 }

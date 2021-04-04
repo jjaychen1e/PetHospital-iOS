@@ -195,8 +195,12 @@ extension DiseaseListViewController {
 
 extension DiseaseListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let item = self.dataSource.itemIdentifier(for: indexPath) as? DiseaseCase {
-            print(111)
+        if let diseaseCase = self.dataSource.itemIdentifier(for: indexPath) as? DiseaseCase {
+            let diseaseCaseDetailVC = DiseaseCaseDetailViewController()
+            diseaseCaseDetailVC.diseaseCase = diseaseCase
+            self.present(diseaseCaseDetailVC, animated: true) {
+                
+            }
         }
     }
 }

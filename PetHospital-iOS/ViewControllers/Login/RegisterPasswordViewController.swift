@@ -19,8 +19,8 @@ class RegisterPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = Asset.dynamicLightGrayBackground.color
-        setTransparentNavigationBarWith(backgroundColor: Asset.dynamicLightGrayBackground.color)
+        self.view.backgroundColor = Asset.dynamicBackground.color
+        setTransparentNavigationBarWith(backgroundColor: Asset.dynamicBackground.color)
         self.continueBarButtonItem = UIBarButtonItem(title: "继续", style: .done, target: self, action: #selector(tryToContinue))
         navigationItem.rightBarButtonItem = continueBarButtonItem
         
@@ -73,7 +73,7 @@ class RegisterPasswordViewController: UIViewController {
                 }
             }
         }
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: UIHostingController(rootView: CircularLoadingView().background(Color(Asset.dynamicLightGrayBackground.color))).view!)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: UIHostingController(rootView: CircularLoadingView().background(Color(Asset.dynamicBackground.color))).view!)
     }
     
     @objc

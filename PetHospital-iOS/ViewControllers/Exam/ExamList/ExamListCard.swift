@@ -44,7 +44,7 @@ struct ExamListCard: View {
             .padding(.all, 32)
             .background(
                 RoundedRectangle(cornerRadius: 28, style: .continuous)
-                    .foregroundColor(Color(.secondarySystemBackground))
+                    .foregroundColor(Color(Asset.dynamicSecondaryBackground.color))
                     .shadow(color: Color.black.opacity(0.2), radius: 4, x: 1, y: 1)
                     .padding()
             )

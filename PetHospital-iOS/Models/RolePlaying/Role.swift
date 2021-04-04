@@ -8,10 +8,9 @@
 import Foundation
 
 struct Role: Codable, Identifiable {
-    var id = UUID()
-    
+    var id: Int
     var name: String
-    var description: String
+    var description: String = "我们还需要描述信息，后端暂时没有这个字段。"
     
     var emoji: String {
         switch name {
@@ -24,5 +23,10 @@ struct Role: Codable, Identifiable {
         default:
             return "👨🏻"
         }
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
     }
 }

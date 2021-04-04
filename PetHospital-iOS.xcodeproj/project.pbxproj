@@ -14,6 +14,7 @@
 		6313A8EB2614501000C82767 /* ExamCardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6313A8EA2614501000C82767 /* ExamCardContentView.swift */; };
 		6314213026034D0A00F7D8E2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6314212F26034D0A00F7D8E2 /* NetworkManager.swift */; };
 		6314DEB726198BA100AAB97C /* ExamPaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6314DEB626198BA100AAB97C /* ExamPaper.swift */; };
+		6314DEBA2619A51800AAB97C /* CaseModuleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6314DEB92619A51800AAB97C /* CaseModuleCard.swift */; };
 		63250372260B336C00E04F6A /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63250371260B336C00E04F6A /* Assets.swift */; };
 		63250376260B35C200E04F6A /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 63250375260B35C200E04F6A /* swiftgen.yml */; };
 		6325037A260B35EF00E04F6A /* Storyboard Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63250378260B35EF00E04F6A /* Storyboard Segues.swift */; };
@@ -28,7 +29,7 @@
 		6344B935260B5CD600B31986 /* GRDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6344B934260B5CD600B31986 /* GRDBHelper.swift */; };
 		6347700B25F8D83700BF8612 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6347700A25F8D83700BF8612 /* Department.swift */; };
 		6347701B25F8DFF200BF8612 /* TouringListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6347701A25F8DFF200BF8612 /* TouringListView.swift */; };
-		6347702425F908CE00BF8612 /* RolePlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6347702325F908CE00BF8612 /* RolePlayingView.swift */; };
+		6347702425F908CE00BF8612 /* RoleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6347702325F908CE00BF8612 /* RoleCardView.swift */; };
 		637A8A4225FEEA680086ABEF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637A8A4125FEEA680086ABEF /* User.swift */; };
 		637A8A4625FEED430086ABEF /* ResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637A8A4525FEED430086ABEF /* ResultEntity.swift */; };
 		637D12482612ECF40099AA83 /* Disease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D12472612ECF40099AA83 /* Disease.swift */; };
@@ -50,6 +51,7 @@
 		63C9B1EB25F88C6C0093DD91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C9B1E925F88C6C0093DD91 /* Main.storyboard */; };
 		63C9B1ED25F88C6E0093DD91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C9B1EC25F88C6E0093DD91 /* Assets.xcassets */; };
 		63C9B1F025F88C6E0093DD91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C9B1EE25F88C6E0093DD91 /* LaunchScreen.storyboard */; };
+		63E21B402619A93700D5D09E /* DiseaseCaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E21B3F2619A93700D5D09E /* DiseaseCaseDetailViewController.swift */; };
 		63E614DA2608190200F259B6 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E614D92608190200F259B6 /* EndPoint.swift */; };
 		63E614DF2608213C00F259B6 /* GlobalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E614DE2608213C00F259B6 /* GlobalCache.swift */; };
 		63E614E4260824CA00F259B6 /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E614E3260824CA00F259B6 /* LoginHelper.swift */; };
@@ -67,6 +69,7 @@
 		6313A8EA2614501000C82767 /* ExamCardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamCardContentView.swift; sourceTree = "<group>"; };
 		6314212F26034D0A00F7D8E2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6314DEB626198BA100AAB97C /* ExamPaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamPaper.swift; sourceTree = "<group>"; };
+		6314DEB92619A51800AAB97C /* CaseModuleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseModuleCard.swift; sourceTree = "<group>"; };
 		63250371260B336C00E04F6A /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = SOURCE_ROOT; };
 		63250375260B35C200E04F6A /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
 		63250378260B35EF00E04F6A /* Storyboard Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard Segues.swift"; sourceTree = SOURCE_ROOT; };
@@ -81,7 +84,7 @@
 		6344B934260B5CD600B31986 /* GRDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRDBHelper.swift; sourceTree = "<group>"; };
 		6347700A25F8D83700BF8612 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		6347701A25F8DFF200BF8612 /* TouringListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouringListView.swift; sourceTree = "<group>"; };
-		6347702325F908CE00BF8612 /* RolePlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolePlayingView.swift; sourceTree = "<group>"; };
+		6347702325F908CE00BF8612 /* RoleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleCardView.swift; sourceTree = "<group>"; };
 		637A8A4125FEEA680086ABEF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		637A8A4525FEED430086ABEF /* ResultEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultEntity.swift; path = ../../../../ResultEntity.swift; sourceTree = "<group>"; };
 		637D12472612ECF40099AA83 /* Disease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disease.swift; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 		63C9B1EC25F88C6E0093DD91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63C9B1EF25F88C6E0093DD91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63C9B1F125F88C6E0093DD91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63E21B3F2619A93700D5D09E /* DiseaseCaseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseCaseDetailViewController.swift; sourceTree = "<group>"; };
 		63E614D92608190200F259B6 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		63E614DE2608213C00F259B6 /* GlobalCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalCache.swift; sourceTree = "<group>"; };
 		63E614E3260824CA00F259B6 /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
@@ -307,7 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				637D12582612EEFE0099AA83 /* RolePlaying.storyboard */,
-				6347702325F908CE00BF8612 /* RolePlayingView.swift */,
+				6347702325F908CE00BF8612 /* RoleCardView.swift */,
 				633572F425F90AF500C8F882 /* RolePlayingViewController.swift */,
 			);
 			path = RolePlaying;
@@ -317,7 +321,9 @@
 			isa = PBXGroup;
 			children = (
 				637D12502612EEC90099AA83 /* CaseStudy.storyboard */,
+				6314DEB92619A51800AAB97C /* CaseModuleCard.swift */,
 				637D125F2612EF5A0099AA83 /* DiseaseListViewController.swift */,
+				63E21B3F2619A93700D5D09E /* DiseaseCaseDetailViewController.swift */,
 			);
 			path = CaseStudy;
 			sourceTree = "<group>";
@@ -580,6 +586,7 @@
 				637D12602612EF5A0099AA83 /* DiseaseListViewController.swift in Sources */,
 				63A84A5025F89F5C00AE8628 /* TouringViewController.swift in Sources */,
 				637A8A4625FEED430086ABEF /* ResultEntity.swift in Sources */,
+				6314DEBA2619A51800AAB97C /* CaseModuleCard.swift in Sources */,
 				633DA0FF26188AA400C3D7AF /* ExamListCard.swift in Sources */,
 				6325038F260B3BCE00E04F6A /* CircularLoadingView.swift in Sources */,
 				63ED91B82614555500E335C9 /* ExamCardListCell.swift in Sources */,
@@ -607,13 +614,14 @@
 				633572F525F90AF500C8F882 /* RolePlayingViewController.swift in Sources */,
 				63F5D9262611596400832200 /* ContinueWithButton.swift in Sources */,
 				6313A8E526144FB100C82767 /* ExamContentConfiguration.swift in Sources */,
+				63E21B402619A93700D5D09E /* DiseaseCaseDetailViewController.swift in Sources */,
 				6313A8E026144B1000C82767 /* Exam.swift in Sources */,
 				637A8A4225FEEA680086ABEF /* User.swift in Sources */,
 				6347700B25F8D83700BF8612 /* Department.swift in Sources */,
 				63E614DF2608213C00F259B6 /* GlobalCache.swift in Sources */,
 				63E614E4260824CA00F259B6 /* LoginHelper.swift in Sources */,
 				633DA10C2618AAD400C3D7AF /* ExamQuestionViewController.swift in Sources */,
-				6347702425F908CE00BF8612 /* RolePlayingView.swift in Sources */,
+				6347702425F908CE00BF8612 /* RoleCardView.swift in Sources */,
 				633572F925F90C4400C8F882 /* Role.swift in Sources */,
 				63A724C12608E7EE00A27695 /* RegisterPasswordViewController.swift in Sources */,
 			);

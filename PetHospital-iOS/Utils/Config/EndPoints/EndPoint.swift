@@ -15,6 +15,8 @@ enum EndPoint: String {
     case login                       = "/oauth/login/normal"
     case googleLogin                 = "/oauth/login/app/google"
     
+    case allRoles                    = "/simulation/getRoles"
+    
     case allDepartments              = "/usr/getLayout"
     
     case allDiseases                 = "/disease/findAll"

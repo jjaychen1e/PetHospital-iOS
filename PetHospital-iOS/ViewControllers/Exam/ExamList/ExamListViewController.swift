@@ -21,6 +21,9 @@ class ExamListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = Asset.dynamicBackground.color
+        
         configureCollectionView()
         configureDataSource()
         
@@ -46,6 +49,7 @@ class ExamListViewController: UIViewController {
 extension ExamListViewController {
     private func generateLayout() -> UICollectionViewLayout {
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .plain)
+        listConfiguration.backgroundColor = .clear
         listConfiguration.showsSeparators = false
         let layout = UICollectionViewCompositionalLayout.list(using: listConfiguration)
         return layout
@@ -54,9 +58,9 @@ extension ExamListViewController {
     private func configureCollectionView() {
         let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: generateLayout())
         collectionView.delegate = self
-        view.addSubview(collectionView)
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        collectionView.backgroundColor = .systemGroupedBackground
+        collectionView.backgroundColor = .clear
+        view.addSubview(collectionView)
         self.collectionView = collectionView
     }
     
