@@ -187,7 +187,7 @@ fileprivate class ChoiceButton: UIView {
         backgroundView.layer.borderWidth = 2
         backgroundView.layer.borderColor = UIColor.systemBlue.withAlphaComponent(0.0).cgColor
         backgroundView.clipsToBounds = true
-        backgroundView.backgroundColor = .systemBackground
+        backgroundView.backgroundColor = Asset.dynamicBackground.color
         shadowView.addSubview(backgroundView)
         backgroundView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()

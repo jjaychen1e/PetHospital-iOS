@@ -17,7 +17,7 @@ class RolePlayingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .secondarySystemBackground
+        self.view.backgroundColor = Asset.dynamicBackground.color
         
         setViewHierachy()
         

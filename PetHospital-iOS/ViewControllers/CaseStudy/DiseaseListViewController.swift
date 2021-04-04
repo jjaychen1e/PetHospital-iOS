@@ -69,7 +69,8 @@ class DiseaseListViewController: UIViewController {
 
 extension DiseaseListViewController {
     private func generateLayout() -> UICollectionViewLayout {
-        let listConfiguration = UICollectionLayoutListConfiguration(appearance: .sidebar)
+        var listConfiguration = UICollectionLayoutListConfiguration(appearance: .sidebar)
+        listConfiguration.backgroundColor = .clear
         let layout = UICollectionViewCompositionalLayout.list(using: listConfiguration)
         return layout
     }
@@ -78,7 +79,7 @@ extension DiseaseListViewController {
         let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: generateLayout())
         view.addSubview(collectionView)
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        collectionView.backgroundColor = .systemGroupedBackground
+        collectionView.backgroundColor = Asset.dynamicBackground.color
         collectionView.delegate = self
         self.collectionView = collectionView
     }
