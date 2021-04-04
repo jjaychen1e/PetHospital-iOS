@@ -14,6 +14,7 @@ class LoginPasswordViewController: UIViewController {
     private var continueBarButtonItem: UIBarButtonItem!
     
     var username: String!
+    var socialUserID: Int? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,7 @@ class LoginPasswordViewController: UIViewController {
     private func checkLoginWith(username: String, password: String, completionHandler: @escaping (Bool) -> ()) {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: UIHostingController(rootView: CircularLoadingView().background(Color(Asset.dynamicLightGrayBackground.color))).view!)
         
-        LoginHelper.login(with: LoginParameter(username: username, password: password)) { (result) in
+        LoginHelper.login(with: LoginParameter(username: username, password: password, socialUserID: socialUserID)) { (result) in
             self.navigationItem.rightBarButtonItem = self.continueBarButtonItem
             completionHandler(result)
             return

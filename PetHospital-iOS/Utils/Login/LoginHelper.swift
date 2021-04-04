@@ -10,7 +10,12 @@ import Foundation
 class LoginHelper {
     
     static func hasCachedLoginStatus() -> Bool {
-        (try? GRDBHelper.shared.dbQueue.read { try LoginResult.fetchAll($0) }.count > 0) ?? false
+        if let loginRestul = try? GRDBHelper.shared.dbQueue.read({ try LoginResult.fetchAll($0) }).first {
+            GlobalCache.shared.loginResult = loginRestul
+            return true
+        }
+        
+        return false
     }
     
     static func checkLoginStatus(completionHandler: @escaping (Bool) -> ()) {
@@ -67,24 +72,12 @@ class LoginHelper {
         }
     }
     
-    static func googleLogin(with parameter: GoogleUser, completionHandler: @escaping (Bool) -> ()) {
-        NetworkManager.shared.fetch(endPoint: .googleLogin, method: .POST, parameters: parameter) { (result: ResultEntity<LoginResult>?) in
+    static func googleLogin(with parameter: GoogleUser, completionHandler: @escaping (GoogleLoginResult?) -> ()) {
+        NetworkManager.shared.fetch(endPoint: .googleLogin, method: .POST, parameters: parameter) { (result: ResultEntity<GoogleLoginResult>?) in
             if let result = result {
                 if result.code == .success {
                     if let data = result.data {
-                        GlobalCache.shared.loginResult = result.data
-                        GlobalCache.shared.loginResult = data
-                        // We don't know the actual password!!
-//                        GlobalCache.shared.loginResult?.user.password = parameter.password
-                        do {
-                            try GRDBHelper.shared.dbQueue.write { db in
-                                try data.save(db)
-                            }
-                        } catch {
-                            print(error)
-                        }
-                        
-                        completionHandler(true)
+                        completionHandler(data)
                         return
                     }
                 } else {
@@ -92,7 +85,7 @@ class LoginHelper {
                 }
             }
             
-            completionHandler(false)
+            completionHandler(nil)
             return
         }
     }

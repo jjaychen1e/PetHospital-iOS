@@ -15,6 +15,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var continueWithGoogle: UIView!
     private var continueBarButtonItem: UIBarButtonItem!
     
+    private var socialUserID: Int? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,6 +99,7 @@ class LoginViewController: UIViewController {
     private func goRegiter() {
         let vc = StoryboardScene.Login.registerPasswordViewController.instantiate()
         vc.username = usernameTextField.text!
+        vc.socialUserID = socialUserID
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -104,6 +107,7 @@ class LoginViewController: UIViewController {
     private func goLogin() {
         let vc = StoryboardScene.Login.loginPasswordViewController.instantiate()
         vc.username = usernameTextField.text!
+        vc.socialUserID = socialUserID
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -139,11 +143,33 @@ extension LoginViewController: GIDSignInDelegate {
                                         accessToken: user.authentication.accessToken,
                                         avatar: user.profile.hasImage ? user.profile.imageURL(withDimension: 256)?.absoluteString : nil)
             
-            LoginHelper.googleLogin(with: googleUser) { (success) in
-                if success {
-                    ToastHelper.show(emoji: "🎉", title: "登录成功", subtitle: "使用 Google 账号登录成功。欢迎来到宠物医院。")
-                    self.navigationController?.setViewControllers([StoryboardScene.Main.mainTabBarController.instantiate()], animated: true)
-                    self.navigationController?.setNavigationBarHidden(true, animated: true)
+            LoginHelper.googleLogin(with: googleUser) { (result: GoogleLoginResult?) in
+                if let result = result {
+                    if let user = result.user, let token = result.token {
+                        // 存在绑定账号
+                        ToastHelper.show(emoji: "🎉", title: "谷歌账号验证成功", subtitle: "使用 Google 账号登录成功。欢迎来到宠物医院。")
+                        self.navigationController?.setViewControllers([StoryboardScene.Main.mainTabBarController.instantiate()], animated: true)
+                        self.navigationController?.setNavigationBarHidden(true, animated: true)
+                        
+                        
+                        let loginResult = LoginResult(token: token, user: user)
+                        GlobalCache.shared.loginResult = loginResult
+                        do {
+                            try GRDBHelper.shared.dbQueue.write { db in
+                                try loginResult.save(db)
+                            }
+                        } catch {
+                            print(error)
+                        }
+                        
+                        
+                    } else if let socialUserID = result.socialUserID {
+                        // 不存在绑定账号，应当注册
+                        self.socialUserID = socialUserID
+                        ToastHelper.show(emoji: "✔️", title: "谷歌账号验证成功", subtitle: "您还未绑定账号，请注册或登录账户以绑定您的谷歌账号。")
+                    } else {
+                        ToastHelper.show(emoji: "⚠️", title: "服务器出错", subtitle: "服务器返回数据出错")
+                    }
                 } else {
                     ToastHelper.show(emoji: "⚠️", title: "验证失败", subtitle: "服务器验证失败。")
                 }

@@ -28,7 +28,7 @@
         <!--答题测试-->
         <scene sceneID="7Ah-wN-cM6">
             <objects>
-                <viewController id="adF-Z6-fmp" sceneMemberID="viewController">
+                <viewController id="adF-Z6-fmp" customClass="ExamListViewController" customModule="PetHospital_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mho-JG-TEd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

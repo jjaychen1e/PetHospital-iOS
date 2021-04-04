@@ -37,8 +37,8 @@ class NetworkManager {
     
     /// We should provide a non-generic version if parameter is `nil`. And this method can only support GET.
     @discardableResult
-    func fetch<T: Decodable>(endPoint: EndPoint, completionHandler: @escaping (T?) -> ()) -> DataRequest {
-        fetch(fullURL: BaseAddress + endPoint.rawValue, completionHandler: completionHandler)
+    func fetch<T: Decodable>(endPoint: EndPoint, method: HTTPMethod = .GET, completionHandler: @escaping (T?) -> ()) -> DataRequest {
+        fetch(fullURL: BaseAddress + endPoint.rawValue, method: method, completionHandler: completionHandler)
     }
     
     @discardableResult
@@ -50,9 +50,10 @@ class NetworkManager {
     
     /// We should provide a non-generic version if parameter is `nil`. And this method can only support GET.
     @discardableResult
-    func fetch<T: Decodable>(fullURL: String, completionHandler: @escaping (T?) -> ()) -> DataRequest {
+    func fetch<T: Decodable>(fullURL: String, method: HTTPMethod = .GET, completionHandler: @escaping (T?) -> ()) -> DataRequest {
+        // TODO: Do we need json encoder?
         let request = AF.request(fullURL,
-                                 method: .get)
+                                 method: method.convertToAlamofireHTTPMethod())
             .response { (request) in
                 if let error = request.error {
                     print(error)

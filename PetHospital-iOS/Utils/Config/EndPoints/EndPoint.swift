@@ -21,6 +21,12 @@ enum EndPoint: String {
     
     case allDiseases                 = "/disease/findAll"
     
+    
+    case allExams                    = "/exam/findAvailableExams"
+    case saveExamResult              = "/exam/saveScore"
+    
+    case examPaperContent            = "/paper/findPaperById"
+    
     var fullEndPointURL: String {
         get {
             BaseAddress + self.rawValue

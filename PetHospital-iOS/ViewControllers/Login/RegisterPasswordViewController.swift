@@ -14,6 +14,7 @@ class RegisterPasswordViewController: UIViewController {
     private var continueBarButtonItem: UIBarButtonItem!
     
     var username: String!
+    var socialUserID: Int? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,11 +57,11 @@ class RegisterPasswordViewController: UIViewController {
         }
         // ... Ask the server
         NetworkManager.shared.fetch(endPoint: .register, method: .POST,
-                                    parameters: LoginParameter(username: username, password: password)) { (result: ResultEntity<Bool>?) in
+                                    parameters: LoginParameter(username: username, password: password, socialUserID: socialUserID)) { (result: ResultEntity<Bool>?) in
             if let result = result {
+                self.navigationItem.rightBarButtonItem = self.continueBarButtonItem
                 if result.code == .success, let data = result.data, data == true {
                     LoginHelper.login(with: LoginParameter(username: username, password: password)) { (result) in
-                        self.navigationItem.rightBarButtonItem = self.continueBarButtonItem
                         completionHandler(result)
                         return
                     }
@@ -83,7 +84,7 @@ class RegisterPasswordViewController: UIViewController {
                 self.navigationController?.setViewControllers([StoryboardScene.Main.mainTabBarController.instantiate()], animated: true)
                 self.navigationController?.setNavigationBarHidden(true, animated: true)
             } else {
-                ToastHelper.show(emoji: "🙅", title: "密码错误", subtitle: "请检查你的密码。")
+                ToastHelper.show(emoji: "🙅", title: "注册失败", subtitle: "可能是不小心被人注册了。")
             }
         }
     }

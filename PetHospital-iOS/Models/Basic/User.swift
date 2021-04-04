@@ -10,17 +10,37 @@ import GRDB
 struct LoginParameter: Codable {
     var username: String
     var password: String
+    var socialUserID: Int?
     
     enum CodingKeys: String, CodingKey {
         case username = "stuId"
         case password = "pwd"
+        case socialUserID = "socialUsrId"
     }
 }
 
 struct LoginResult: Codable {
     var token: String
-    var socialUserID: String?
+    var socialUserID: Int?
     var user: User
+    
+    enum CodingKeys: String, CodingKey {
+        case token
+        case user
+        case socialUserID = "socialUsrId"
+    }
+}
+
+struct GoogleLoginResult: Codable {
+    var token: String?
+    var socialUserID: Int?
+    var user: User?
+    
+    enum CodingKeys: String, CodingKey {
+        case token
+        case user
+        case socialUserID = "socialUsrId"
+    }
 }
 
 struct User: Codable {

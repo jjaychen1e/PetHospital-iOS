@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		272977AA6874D334C36393DB /* Pods_PetHospital_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF6DC7085A0C456F9642B02 /* Pods_PetHospital_iOS.framework */; };
+		6313A8DC26144ABF00C82767 /* ExamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6313A8DB26144ABF00C82767 /* ExamListViewController.swift */; };
+		6313A8E026144B1000C82767 /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6313A8DF26144B1000C82767 /* Exam.swift */; };
+		6313A8E526144FB100C82767 /* ExamContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6313A8E426144FB100C82767 /* ExamContentConfiguration.swift */; };
+		6313A8EB2614501000C82767 /* ExamCardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6313A8EA2614501000C82767 /* ExamCardContentView.swift */; };
 		6314213026034D0A00F7D8E2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6314212F26034D0A00F7D8E2 /* NetworkManager.swift */; };
 		63250372260B336C00E04F6A /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63250371260B336C00E04F6A /* Assets.swift */; };
 		63250376260B35C200E04F6A /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 63250375260B35C200E04F6A /* swiftgen.yml */; };
@@ -16,6 +20,11 @@
 		6325038F260B3BCE00E04F6A /* CircularLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6325038E260B3BCE00E04F6A /* CircularLoadingView.swift */; };
 		633572F525F90AF500C8F882 /* RolePlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633572F425F90AF500C8F882 /* RolePlayingViewController.swift */; };
 		633572F925F90C4400C8F882 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633572F825F90C4400C8F882 /* Role.swift */; };
+		633DA0FF26188AA400C3D7AF /* ExamListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633DA0FE26188AA400C3D7AF /* ExamListCard.swift */; };
+		633DA1042618A6EC00C3D7AF /* ExamPaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633DA1032618A6EC00C3D7AF /* ExamPaper.swift */; };
+		633DA1082618A92100C3D7AF /* ExamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633DA1072618A92100C3D7AF /* ExamDetailViewController.swift */; };
+		633DA10C2618AAD400C3D7AF /* ExamQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633DA10B2618AAD400C3D7AF /* ExamQuestionViewController.swift */; };
+		633DA10F26197B7E00C3D7AF /* UIButton+BackgroundColorWithState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633DA10E26197B7E00C3D7AF /* UIButton+BackgroundColorWithState.swift */; };
 		6344B935260B5CD600B31986 /* GRDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6344B934260B5CD600B31986 /* GRDBHelper.swift */; };
 		6347700B25F8D83700BF8612 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6347700A25F8D83700BF8612 /* Department.swift */; };
 		6347701B25F8DFF200BF8612 /* TouringListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6347701A25F8DFF200BF8612 /* TouringListView.swift */; };
@@ -28,7 +37,6 @@
 		637D12592612EEFE0099AA83 /* RolePlaying.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637D12582612EEFE0099AA83 /* RolePlaying.storyboard */; };
 		637D125D2612EF0B0099AA83 /* Touring.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637D125C2612EF0B0099AA83 /* Touring.storyboard */; };
 		637D12602612EF5A0099AA83 /* DiseaseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D125F2612EF5A0099AA83 /* DiseaseListViewController.swift */; };
-		637D12632612F3A80099AA83 /* DiseaseListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D12622612F3A80099AA83 /* DiseaseListCell.swift */; };
 		638D28F526116B0F00DC32B9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638D28F426116B0F00DC32B9 /* WebViewController.swift */; };
 		638D28F92611773200DC32B9 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638D28F82611773200DC32B9 /* URL+Extension.swift */; };
 		638D2908261190AA00DC32B9 /* GoogleSignIn.plist in Resources */ = {isa = PBXBuildFile; fileRef = 638D2907261190AA00DC32B9 /* GoogleSignIn.plist */; };
@@ -47,11 +55,16 @@
 		63E614E4260824CA00F259B6 /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E614E3260824CA00F259B6 /* LoginHelper.swift */; };
 		63E614E9260829BD00F259B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E614E8260829BD00F259B6 /* LoginViewController.swift */; };
 		63E614ED26082DF400F259B6 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E614EC26082DF400F259B6 /* Login.storyboard */; };
+		63ED91B82614555500E335C9 /* ExamCardListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ED91B72614555500E335C9 /* ExamCardListCell.swift */; };
 		63F5D9262611596400832200 /* ContinueWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F5D9252611596400832200 /* ContinueWithButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0FF6DC7085A0C456F9642B02 /* Pods_PetHospital_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetHospital_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6313A8DB26144ABF00C82767 /* ExamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamListViewController.swift; sourceTree = "<group>"; };
+		6313A8DF26144B1000C82767 /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
+		6313A8E426144FB100C82767 /* ExamContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamContentConfiguration.swift; sourceTree = "<group>"; };
+		6313A8EA2614501000C82767 /* ExamCardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamCardContentView.swift; sourceTree = "<group>"; };
 		6314212F26034D0A00F7D8E2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		63250371260B336C00E04F6A /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = SOURCE_ROOT; };
 		63250375260B35C200E04F6A /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
@@ -60,6 +73,11 @@
 		6325038E260B3BCE00E04F6A /* CircularLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLoadingView.swift; sourceTree = "<group>"; };
 		633572F425F90AF500C8F882 /* RolePlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolePlayingViewController.swift; sourceTree = "<group>"; };
 		633572F825F90C4400C8F882 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		633DA0FE26188AA400C3D7AF /* ExamListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamListCard.swift; sourceTree = "<group>"; };
+		633DA1032618A6EC00C3D7AF /* ExamPaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExamPaper.swift; path = ../../../../ExamPaper.swift; sourceTree = "<group>"; };
+		633DA1072618A92100C3D7AF /* ExamDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDetailViewController.swift; sourceTree = "<group>"; };
+		633DA10B2618AAD400C3D7AF /* ExamQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamQuestionViewController.swift; sourceTree = "<group>"; };
+		633DA10E26197B7E00C3D7AF /* UIButton+BackgroundColorWithState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+BackgroundColorWithState.swift"; sourceTree = "<group>"; };
 		6344B934260B5CD600B31986 /* GRDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRDBHelper.swift; sourceTree = "<group>"; };
 		6347700A25F8D83700BF8612 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		6347701A25F8DFF200BF8612 /* TouringListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouringListView.swift; sourceTree = "<group>"; };
@@ -72,7 +90,6 @@
 		637D12582612EEFE0099AA83 /* RolePlaying.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RolePlaying.storyboard; sourceTree = "<group>"; };
 		637D125C2612EF0B0099AA83 /* Touring.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Touring.storyboard; sourceTree = "<group>"; };
 		637D125F2612EF5A0099AA83 /* DiseaseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseListViewController.swift; sourceTree = "<group>"; };
-		637D12622612F3A80099AA83 /* DiseaseListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseListCell.swift; sourceTree = "<group>"; };
 		638D28F426116B0F00DC32B9 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		638D28F82611773200DC32B9 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		638D2907261190AA00DC32B9 /* GoogleSignIn.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoogleSignIn.plist; sourceTree = "<group>"; };
@@ -93,6 +110,7 @@
 		63E614E3260824CA00F259B6 /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
 		63E614E8260829BD00F259B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		63E614EC26082DF400F259B6 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		63ED91B72614555500E335C9 /* ExamCardListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamCardListCell.swift; sourceTree = "<group>"; };
 		63F5D9252611596400832200 /* ContinueWithButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueWithButton.swift; sourceTree = "<group>"; };
 		CC5E8E3341C0B0D5D7ED37D8 /* Pods-PetHospital-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetHospital-iOS.debug.xcconfig"; path = "Target Support Files/Pods-PetHospital-iOS/Pods-PetHospital-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D01D2E739B2144F7741F83AF /* Pods-PetHospital-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetHospital-iOS.release.xcconfig"; path = "Target Support Files/Pods-PetHospital-iOS/Pods-PetHospital-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +135,27 @@
 				D01D2E739B2144F7741F83AF /* Pods-PetHospital-iOS.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		6313A8DE26144ADA00C82767 /* Exam */ = {
+			isa = PBXGroup;
+			children = (
+				6313A8DF26144B1000C82767 /* Exam.swift */,
+				633DA1032618A6EC00C3D7AF /* ExamPaper.swift */,
+			);
+			path = Exam;
+			sourceTree = "<group>";
+		};
+		6313A8E926144FF900C82767 /* ExamList */ = {
+			isa = PBXGroup;
+			children = (
+				6313A8DB26144ABF00C82767 /* ExamListViewController.swift */,
+				6313A8E426144FB100C82767 /* ExamContentConfiguration.swift */,
+				6313A8EA2614501000C82767 /* ExamCardContentView.swift */,
+				63ED91B72614555500E335C9 /* ExamCardListCell.swift */,
+				633DA0FE26188AA400C3D7AF /* ExamListCard.swift */,
+			);
+			path = ExamList;
 			sourceTree = "<group>";
 		};
 		6314212D26034CF800F7D8E2 /* Utils */ = {
@@ -148,6 +187,15 @@
 				633572F825F90C4400C8F882 /* Role.swift */,
 			);
 			path = RolePlaying;
+			sourceTree = "<group>";
+		};
+		633DA1062618A90A00C3D7AF /* ExamDetail */ = {
+			isa = PBXGroup;
+			children = (
+				633DA1072618A92100C3D7AF /* ExamDetailViewController.swift */,
+				633DA10B2618AAD400C3D7AF /* ExamQuestionViewController.swift */,
+			);
+			path = ExamDetail;
 			sourceTree = "<group>";
 		};
 		6344B932260B5CB800B31986 /* GRDB */ = {
@@ -206,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				63A724C32608E83100A27695 /* UIViewController+UINavigationBarItem+Extension.swift */,
+				633DA10E26197B7E00C3D7AF /* UIButton+BackgroundColorWithState.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -222,6 +271,7 @@
 		63A84A5225F8A20500AE8628 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6313A8DE26144ADA00C82767 /* Exam */,
 				637D12462612EC4D0099AA83 /* CaseStudy */,
 				637A8A4025FEE9C10086ABEF /* Basic */,
 				633572F725F90C3A00C8F882 /* RolePlaying */,
@@ -268,7 +318,6 @@
 			children = (
 				637D12502612EEC90099AA83 /* CaseStudy.storyboard */,
 				637D125F2612EF5A0099AA83 /* DiseaseListViewController.swift */,
-				637D12622612F3A80099AA83 /* DiseaseListCell.swift */,
 			);
 			path = CaseStudy;
 			sourceTree = "<group>";
@@ -276,6 +325,8 @@
 		63A84A5725F8A24A00AE8628 /* Exam */ = {
 			isa = PBXGroup;
 			children = (
+				633DA1062618A90A00C3D7AF /* ExamDetail */,
+				6313A8E926144FF900C82767 /* ExamList */,
 				637D12542612EEE60099AA83 /* Exam.storyboard */,
 			);
 			path = Exam;
@@ -529,9 +580,14 @@
 				637D12602612EF5A0099AA83 /* DiseaseListViewController.swift in Sources */,
 				63A84A5025F89F5C00AE8628 /* TouringViewController.swift in Sources */,
 				637A8A4625FEED430086ABEF /* ResultEntity.swift in Sources */,
+				633DA0FF26188AA400C3D7AF /* ExamListCard.swift in Sources */,
 				6325038F260B3BCE00E04F6A /* CircularLoadingView.swift in Sources */,
+				63ED91B82614555500E335C9 /* ExamCardListCell.swift in Sources */,
 				63C9B1E425F88C6C0093DD91 /* AppDelegate.swift in Sources */,
+				6313A8DC26144ABF00C82767 /* ExamListViewController.swift in Sources */,
 				63E614E9260829BD00F259B6 /* LoginViewController.swift in Sources */,
+				633DA1042618A6EC00C3D7AF /* ExamPaper.swift in Sources */,
+				633DA1082618A92100C3D7AF /* ExamDetailViewController.swift in Sources */,
 				638D28F92611773200DC32B9 /* URL+Extension.swift in Sources */,
 				6344B935260B5CD600B31986 /* GRDBHelper.swift in Sources */,
 				63A724D42608F6B900A27695 /* ToastView.swift in Sources */,
@@ -542,17 +598,21 @@
 				638D28F526116B0F00DC32B9 /* WebViewController.swift in Sources */,
 				63250372260B336C00E04F6A /* Assets.swift in Sources */,
 				637D12482612ECF40099AA83 /* Disease.swift in Sources */,
+				633DA10F26197B7E00C3D7AF /* UIButton+BackgroundColorWithState.swift in Sources */,
 				63A724C82608EA1C00A27695 /* LoginPasswordViewController.swift in Sources */,
 				6325037A260B35EF00E04F6A /* Storyboard Segues.swift in Sources */,
+				6313A8EB2614501000C82767 /* ExamCardContentView.swift in Sources */,
 				63E614DA2608190200F259B6 /* EndPoint.swift in Sources */,
 				63A724C42608E83100A27695 /* UIViewController+UINavigationBarItem+Extension.swift in Sources */,
-				637D12632612F3A80099AA83 /* DiseaseListCell.swift in Sources */,
 				633572F525F90AF500C8F882 /* RolePlayingViewController.swift in Sources */,
 				63F5D9262611596400832200 /* ContinueWithButton.swift in Sources */,
+				6313A8E526144FB100C82767 /* ExamContentConfiguration.swift in Sources */,
+				6313A8E026144B1000C82767 /* Exam.swift in Sources */,
 				637A8A4225FEEA680086ABEF /* User.swift in Sources */,
 				6347700B25F8D83700BF8612 /* Department.swift in Sources */,
 				63E614DF2608213C00F259B6 /* GlobalCache.swift in Sources */,
 				63E614E4260824CA00F259B6 /* LoginHelper.swift in Sources */,
+				633DA10C2618AAD400C3D7AF /* ExamQuestionViewController.swift in Sources */,
 				6347702425F908CE00BF8612 /* RolePlayingView.swift in Sources */,
 				633572F925F90C4400C8F882 /* Role.swift in Sources */,
 				63A724C12608E7EE00A27695 /* RegisterPasswordViewController.swift in Sources */,
@@ -704,13 +764,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XKUVHTJ3W8;
+				DEVELOPMENT_TEAM = WHS7F725MC;
 				INFOPLIST_FILE = "PetHospital-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "me.jjayhen.PetHospital-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.jjayhen.PetHospital-iOS2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -724,13 +784,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XKUVHTJ3W8;
+				DEVELOPMENT_TEAM = WHS7F725MC;
 				INFOPLIST_FILE = "PetHospital-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "me.jjayhen.PetHospital-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.jjayhen.PetHospital-iOS2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
