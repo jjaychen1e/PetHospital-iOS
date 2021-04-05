@@ -28,6 +28,8 @@ internal enum Asset {
   internal static let dynamicSecondaryBackground = ColorAsset(name: "dynamicSecondaryBackground")
   internal static let dynamicWhite = ColorAsset(name: "dynamicWhite")
   internal static let googleLogoLogin = ImageAsset(name: "GoogleLogoLogin")
+  internal static let exampleDepartment = ImageAsset(name: "example_department")
+  internal static let exampleDoctor = ImageAsset(name: "example_doctor")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

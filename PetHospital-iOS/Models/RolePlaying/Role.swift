@@ -14,7 +14,7 @@ struct Role: Codable, Identifiable {
     
     var emoji: String {
         switch name {
-        case "医生":
+        case "医生", "医师":
             return "👨‍⚕️"
         case "医助":
             return "👩‍⚕️"

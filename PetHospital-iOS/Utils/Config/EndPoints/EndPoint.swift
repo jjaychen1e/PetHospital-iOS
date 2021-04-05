@@ -17,7 +17,7 @@ enum EndPoint: String {
     
     case allRoles                    = "/simulation/getRoles"
     
-    case allDepartments              = "/usr/getLayout"
+    case allDepartments              = "/guide/getDepartments"
     
     case allDiseases                 = "/disease/findAll"
     

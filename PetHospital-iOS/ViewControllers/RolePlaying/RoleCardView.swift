@@ -10,29 +10,35 @@ import SwiftUI
 struct RoleCardView: View {
     var role: Role
     var body: some View {
-        HStack {
-            Text(role.emoji)
-                .font(.system(size: 50))
-            VStack (alignment: .leading) {
-                Text(role.name)
-                    .font(Font.largeTitle.bold())
-                Text(role.description)
-            }
-            .foregroundColor(.primary)
-            Spacer()
-        }
-        .padding(.all, 32)
-        .background(
-            RoundedRectangle(cornerRadius: 25.0, style: .continuous)
+        Button(action: {}, label: {
+            VStack(alignment: .leading) {
+                Image("example_doctor")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                VStack (alignment: .leading) {
+                    HStack(alignment: .center) {
+                        Text(role.name)
+                            .font(Font.title.bold())
+                        Text(role.emoji)
+                            .font(.system(size: 28))
+                    }
+                    Text(role.description)
+                }
+                .foregroundColor(.primary)
                 .padding()
-                .foregroundColor(Color(Asset.dynamicSecondaryBackground.color))
-                .shadow(color: Color.black.opacity(0.2), radius: 4, x: 1, y: 1)
-        )
+            }
+            .background(
+                Color(Asset.dynamicSecondaryBackground.color)
+            )
+            .cornerRadius(25)
+            .padding()
+            .shadow(color: Color.black.opacity(0.2), radius: 4, x: 1, y: 1)
+        })
     }
 }
 
 struct RoleCardView_Previews: PreviewProvider {
     static var previews: some View {
-        RoleCardView(role: Role(id: 0, name: "一生", description: "描述"))
+        RoleCardView(role: Role(id: 0, name: "医生", description: "描述"))
     }
 }
