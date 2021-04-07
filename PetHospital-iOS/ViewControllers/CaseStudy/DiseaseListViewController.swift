@@ -55,7 +55,7 @@ class DiseaseListViewController: UIViewController {
                                 updatedDisease[index].children![index2].cases = cases.content
                                 self.diseases = updatedDisease
                                 let snapshot = self.initialSnapshot()
-                                self.dataSource.apply(snapshot, to: .main, animatingDifferences: false)
+                                self.dataSource.apply(snapshot, to: .main, animatingDifferences: true)
                             } else {
                                 print(result)
                             }
@@ -76,9 +76,11 @@ extension DiseaseListViewController {
     }
     
     private func configureCollectionView() {
-        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: generateLayout())
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: generateLayout())
         view.addSubview(collectionView)
-        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        collectionView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
         collectionView.backgroundColor = Asset.dynamicBackground.color
         collectionView.delegate = self
         self.collectionView = collectionView
@@ -190,7 +192,7 @@ extension DiseaseListViewController {
 
         // load our initial data
         let snapshot = initialSnapshot()
-        self.dataSource.apply(snapshot, to: .main, animatingDifferences: false)
+        self.dataSource.apply(snapshot, to: .main, animatingDifferences: true)
     }
 }
 

@@ -26,7 +26,9 @@ class RolePlayingViewController: UIViewController {
                 if result.code == .success, let roles = result.data {
                     self.roles = roles
                     roles.forEach { (role) in
-                        let cardView = UIHostingController(rootView: RoleCardView(role: role)).view!
+                        let cardView = UIHostingController(rootView: RoleCardView(role: role, action: {
+                            self.present(UIHostingController(rootView: WorkflowListView(role: role)), animated: true, completion: nil)
+                        })).view!
                         cardView.backgroundColor = .clear
                         self.roleStackView.addArrangedSubview(cardView)
                     }

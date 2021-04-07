@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct Equipment: Codable {
-    let name: String
-    let description: String
-    let position: [Int]
-    let picture: String
+struct Equipment: Codable, Hashable, Identifiable {
+    var id = UUID()
+    var name: String
+    var description: String
+    var position: [Int]
+    var picture: String
     
     enum CodingKeys: String, CodingKey {
         case name
@@ -21,7 +22,7 @@ struct Equipment: Codable {
     }
 }
 
-struct Department: Codable, Identifiable {
+struct Department: Codable, Hashable {
     let id: Int
     let name: String
     let description: String

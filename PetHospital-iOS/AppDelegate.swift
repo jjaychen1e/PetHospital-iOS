@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        URLSession.shared.dataTask(with: URL(string: "www.baidu.com")!).resume()
+        
         // Initialize google sign-in
         if let path = Bundle.main.path(forResource: "GoogleSignIn", ofType: "plist"),
            let keys = NSDictionary(contentsOfFile: path),

@@ -30,6 +30,7 @@ internal enum Asset {
   internal static let googleLogoLogin = ImageAsset(name: "GoogleLogoLogin")
   internal static let exampleDepartment = ImageAsset(name: "example_department")
   internal static let exampleDoctor = ImageAsset(name: "example_doctor")
+  internal static let exampleEquipment = ImageAsset(name: "example_equipment")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

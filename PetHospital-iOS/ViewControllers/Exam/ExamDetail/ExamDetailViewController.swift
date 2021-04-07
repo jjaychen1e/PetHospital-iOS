@@ -124,7 +124,7 @@ class ExamDetailViewController: UIViewController {
                 make.leading.trailing.equalToSuperview()
                 make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
                 make.bottom.equalTo(pageVC.view.snp.top)
-                make.height.equalTo(self.view.snp.height).multipliedBy(0.25)
+                make.height.equalTo(90)
             }
             
             self.configureDataSource()
@@ -139,10 +139,10 @@ class ExamDetailViewController: UIViewController {
             
             let section: NSCollectionLayoutSection
             
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(60))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.28), heightDimension: .fractionalWidth(0.2))
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.28), heightDimension: .absolute(60))
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
             section = NSCollectionLayoutSection(group: group)
             section.interGroupSpacing = 10

@@ -7,7 +7,7 @@
 
 import Foundation
 
-let BaseAddress = "http://192.168.31.79:8080"
+let BaseAddress = "http://139.9.217.28:8080"
 
 enum EndPoint: String {
     case register                    = "/oauth/register/all"
@@ -16,6 +16,7 @@ enum EndPoint: String {
     case googleLogin                 = "/oauth/login/app/google"
     
     case allRoles                    = "/simulation/getRoles"
+    case allWorkflows                = "/simulation/findProcessByRoleId"
     
     case allDepartments              = "/guide/getDepartments"
     

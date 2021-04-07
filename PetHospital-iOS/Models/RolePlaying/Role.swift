@@ -10,7 +10,8 @@ import Foundation
 struct Role: Codable, Identifiable {
     var id: Int
     var name: String
-    var description: String = "我们还需要描述信息，后端暂时没有这个字段。"
+    var picture: String
+    var description: String = "我们还需要角色的描述信息，后端暂时没有这个字段。"
     
     var emoji: String {
         switch name {
@@ -28,5 +29,7 @@ struct Role: Codable, Identifiable {
     enum CodingKeys: String, CodingKey {
         case id
         case name
+        case picture
+        case description = "message"
     }
 }

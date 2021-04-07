@@ -11,4 +11,5 @@ target 'PetHospital-iOS' do
   pod 'SwiftGen', '~> 6.0'
   pod 'GRDB.swift'
   pod 'GoogleSignIn'
+  pod 'UIImageColors'
 end

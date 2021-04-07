@@ -6,16 +6,18 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct RoleCardView: View {
     var role: Role
+    var action: () -> () = {}
     var body: some View {
-        Button(action: {}, label: {
-            VStack(alignment: .leading) {
-                Image("example_doctor")
+        Button(action: action, label: {
+            VStack(alignment: .leading, spacing: 0) {
+                KFImage(URL(string: role.picture)!)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                VStack (alignment: .leading) {
+                VStack (alignment: .leading, spacing: 10) {
                     HStack(alignment: .center) {
                         Text(role.name)
                             .font(Font.title.bold())
@@ -23,6 +25,7 @@ struct RoleCardView: View {
                             .font(.system(size: 28))
                     }
                     Text(role.description)
+                        .font(.subheadline)
                 }
                 .foregroundColor(.primary)
                 .padding()
@@ -39,6 +42,6 @@ struct RoleCardView: View {
 
 struct RoleCardView_Previews: PreviewProvider {
     static var previews: some View {
-        RoleCardView(role: Role(id: 0, name: "医生", description: "描述"))
+        RoleCardView(role: Role(id: 0, name: "医生", picture: "https://pethospital-1255582475.cos-website.ap-shanghai.myqcloud.com/role/doctor.jpg", description: "描述"))
     }
 }

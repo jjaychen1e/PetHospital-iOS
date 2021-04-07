@@ -41,9 +41,9 @@ internal enum StoryboardScene {
   internal enum Main: StoryboardType {
     internal static let storyboardName = "Main"
 
-    internal static let initialScene = InitialSceneType<UIKit.UITabBarController>(storyboard: Main.self)
+    internal static let initialScene = InitialSceneType<PetHospital_iOS.MainTabBarController>(storyboard: Main.self)
 
-    internal static let mainTabBarController = SceneType<UIKit.UITabBarController>(storyboard: Main.self, identifier: "mainTabBarController")
+    internal static let mainTabBarController = SceneType<PetHospital_iOS.MainTabBarController>(storyboard: Main.self, identifier: "mainTabBarController")
   }
   internal enum RolePlaying: StoryboardType {
     internal static let storyboardName = "RolePlaying"

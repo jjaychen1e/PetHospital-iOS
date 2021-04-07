@@ -8,12 +8,13 @@
 import SwiftUI
 
 class ExamListCardViewModel: ObservableObject {
-    @Published var title = ""
+    @Published var title = "考试标题"
     @Published var totalQuestionNumber = 0
     @Published var totalQuestionScore = 0
     @Published var startDateTime = "0000-00-00 00:00"
     @Published var endDateTime = "0000-00-00 00:00"
     @Published var action: () -> () = {}
+    @Published var finished = true
 }
 
 struct ExamListCard: View {
@@ -28,8 +29,19 @@ struct ExamListCard: View {
                 VStack(alignment: .leading) {
                     Text(viewModel.title)
                         .font(.title).fontWeight(.bold)
-                    Text("共 \(viewModel.totalQuestionNumber) 题 计 \(viewModel.totalQuestionScore) 分")
-                        .font(.body)
+                    HStack {
+                        Text("共 \(viewModel.totalQuestionNumber) 题 计 \(viewModel.totalQuestionScore) 分")
+                            .font(.body)
+                        if viewModel.finished {
+                            Group {
+                                Image(systemName: "checkmark.seal.fill")
+                                Text("已完成")
+                                    .font(.body)
+                                    .fontWeight(.bold)
+                            }
+                            .foregroundColor(Color.blue)
+                        }
+                    }
                     Spacer()
                     Text("开始时间 \(viewModel.startDateTime)")
                         .font(Font.system(.subheadline, design: .monospaced).weight(.bold))

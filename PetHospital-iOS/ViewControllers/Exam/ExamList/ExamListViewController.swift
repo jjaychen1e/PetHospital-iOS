@@ -56,11 +56,13 @@ extension ExamListViewController {
     }
     
     private func configureCollectionView() {
-        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: generateLayout())
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: generateLayout())
         collectionView.delegate = self
-        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        collectionView.backgroundColor = .clear
         view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        collectionView.backgroundColor = .clear
         self.collectionView = collectionView
     }
     
@@ -81,10 +83,16 @@ extension ExamListViewController {
             cell.automaticallyUpdatesBackgroundConfiguration = false
             cell.tapAction = { [weak self] in
                 if let self = self {
-                    let examVC = ExamDetailViewController()
-                    examVC.exam = exam
-                    self.present(examVC, animated: true) {
-                        
+                    if exam.finished {
+                        let alertController = UIAlertController(title: "您已参加过这场考试", message: "请勿重复参加考试。", preferredStyle: .alert)
+                        alertController.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
+                        self.present(alertController, animated: true, completion: nil)
+                    } else {
+                        let examVC = ExamDetailViewController()
+                        examVC.exam = exam
+                        self.present(examVC, animated: true) {
+                            
+                        }
                     }
                 }
             }
