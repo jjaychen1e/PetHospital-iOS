@@ -34,10 +34,8 @@ class DiseaseListViewController: UIViewController {
                     // load our initial data
                     let snapshot = self.initialSnapshot()
                     self.dataSource.apply(snapshot, to: .main, animatingDifferences: true)
-                    
-                    ToastHelper.show(emoji: "🎉", title: "获取病种数据成功", subtitle: "共获取到 \(self.diseases.count) 个病种。")
                 } else {
-                    ToastHelper.show(emoji: "⚠️", title: "返回数据错误", subtitle: "错误代码: \(result.code)")
+                    print(result)
                 }
             }
         }

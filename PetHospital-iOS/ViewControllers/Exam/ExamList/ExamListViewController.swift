@@ -27,6 +27,10 @@ class ExamListViewController: UIViewController {
         configureCollectionView()
         configureDataSource()
         
+        fetchData()
+    }
+    
+    func fetchData() {
         let parameters = ["usrId": GlobalCache.shared.loginResult?.user.id]
         
         NetworkManager.shared.fetch(endPoint: .allExams, method: .POST, parameters: parameters) { (result: ResultEntity<[Exam]>?) in
@@ -36,10 +40,8 @@ class ExamListViewController: UIViewController {
                     
                     let snapshot = self.initialSnapshot()
                     self.dataSource.apply(snapshot, to: .main, animatingDifferences: true)
-                    
-                    ToastHelper.show(emoji: "🎉", title: "获取考试数据成功", subtitle: "共获取到 \(self.exams.count) 场考试。")
                 } else {
-                    ToastHelper.show(emoji: "⚠️", title: "返回数据错误", subtitle: "错误代码: \(result.code)")
+                    print(result)
                 }
             }
         }
@@ -90,6 +92,7 @@ extension ExamListViewController {
                     } else {
                         let examVC = ExamDetailViewController()
                         examVC.exam = exam
+                        examVC.examListViewController = self
                         self.present(examVC, animated: true) {
                             
                         }

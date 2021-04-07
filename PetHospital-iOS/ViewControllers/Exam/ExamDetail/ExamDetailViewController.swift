@@ -16,6 +16,8 @@ class ExamDetailViewController: UIViewController {
     
     var questionViewControllers: [ExamQuestionViewController] = []
     var pageVC: UIPageViewController!
+    
+    weak var examListViewController: ExamListViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +84,9 @@ class ExamDetailViewController: UIViewController {
                 if result.code == .success {
                     let alertController = UIAlertController(title: "保存成功", message: "您的成绩为 \(score) 分", preferredStyle: .alert)
                     alertController.addAction(.init(title: "确定", style: .default, handler: { (action) in
-                        self.dismiss(animated: true, completion: nil)
+                        self.dismiss(animated: true) {
+                            self.examListViewController?.fetchData()
+                        }
                     }))
                     self.present(alertController, animated: true, completion: nil)
                 }
