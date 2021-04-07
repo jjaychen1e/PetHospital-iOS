@@ -17,6 +17,8 @@ class TouringViewController: UIViewController {
     }
     
     var searchController: UISearchController!
+    
+    private var _departments: [Department] = []
     var departments: [Department] = []
     
     private var collectionView: UICollectionView!
@@ -31,6 +33,7 @@ class TouringViewController: UIViewController {
             if let result = result {
                 if result.code == .success, let departments = result.data {
                     self.departments = departments
+                    self._departments = departments
                     let snapshot = self.initSnapshot()
                     self.dataSource.apply(snapshot, to: .main, animatingDifferences: true)
                 } else {
@@ -100,17 +103,15 @@ class TouringViewController: UIViewController {
 
 extension TouringViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-//        var departments = Array<Department>()
-//        for i in 0..<100 {
-//            departments.append(.init(id: i, name: "科室\(i)", description: "科室\(i)的描述", picture: "https://cdn.jsdelivr.net/gh/JJAYCHENFIGURE/Image/img/A02/avatar_2020_03_19_16_43.png", roleName: "科室\(i)的负责人", position: [], equipments: []))
-//        }
-//        if let searchText = searchController.searchBar.text,
-//           searchText != "" {
-//            departmentViewModel.departments = departments.filter({ (department) -> Bool in
-//                department.name.localizedCaseInsensitiveContains(searchText)
-//            })
-//        } else {
-//            departmentViewModel.departments = departments
-//        }
+        if let searchText = searchController.searchBar.text, searchText != "" {
+            departments = _departments.filter({ (department) -> Bool in
+                department.name.localizedCaseInsensitiveContains(searchText)
+            })
+        } else {
+            departments = _departments
+        }
+        
+        let snapshot = self.initSnapshot()
+        self.dataSource.apply(snapshot, to: .main, animatingDifferences: true)
     }
 }
