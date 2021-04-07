@@ -39,27 +39,31 @@ struct WorkflowListView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("选择流程参与体验")
                             .font(.headline)
-                        VStack(alignment: .leading, spacing: 16) {
-                            ForEach(workflows) { workflow in
-                                Button(action: {
-                                    rootViewController?.present(UIHostingController(rootView: WorkflowStepsView()), animated: true, completion: nil)
-                                }) {
-                                    HStack {
-                                        Text("流程")
-                                            .font(.headline)
-                                        Text(workflow.name)
-                                        Spacer()
+                        if workflows.count > 0 {
+                            VStack(alignment: .leading, spacing: 16) {
+                                ForEach(workflows) { workflow in
+                                    Button(action: {
+                                        rootViewController?.present(UIHostingController(rootView: WorkflowStepsView(workflowID: workflow.id)), animated: true, completion: nil)
+                                    }) {
+                                        HStack {
+                                            Text("流程")
+                                                .font(.headline)
+                                            Text(workflow.name)
+                                            Spacer()
+                                        }
+                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .background(
+                                            Color(Asset.dynamicSecondaryBackground.color)
+                                        )
+                                        .cornerRadius(12)
+                                        .shadow(color: Color.black.opacity(0.2), radius: 4, x: 1, y: 1)
                                     }
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
-                                    .background(
-                                        Color(Asset.dynamicSecondaryBackground.color)
-                                    )
-                                    .cornerRadius(12)
-                                    .shadow(color: Color.black.opacity(0.2), radius: 4, x: 1, y: 1)
+                                    .foregroundColor(.primary)
                                 }
-                                .foregroundColor(.primary)
                             }
+                        } else {
+                            Text("该角色暂无可选流程。")
                         }
                     }
                 }

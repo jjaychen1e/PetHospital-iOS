@@ -7,13 +7,14 @@
 
 import Foundation
 
-struct WorkflowStep: Codable {
+struct WorkflowStep: Codable, Identifiable, Equatable {
+    var id = UUID()
     var name: String
     var description: String
     var picture: String?
     var video: String?
     
-    enum CokindingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case name
         case description = "message"
         case picture
