@@ -15,14 +15,14 @@ class WorkflowStepsViewModel: ObservableObject {
 
 struct WorkflowStepsView: View {
     
-    var workflowID: Int
+    var workflow: Workflow
     
     @ObservedObject private var viewModel = WorkflowStepsViewModel()
     
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 16) {
-                Text("术前消毒流程")
+                Text("\(workflow.name)流程")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 Text("共 \(viewModel.workflowSteps.count) 个步骤")
@@ -71,7 +71,7 @@ struct WorkflowStepsView: View {
             .padding()
         }
         .onAppear {
-            let parameter = ["processId": workflowID]
+            let parameter = ["processId": workflow.id]
             
             NetworkManager.shared.fetch(endPoint: .workflowSteps, method: .POST, parameters: parameter) { (result: ResultEntity<[WorkflowStep]>?) in
                 if let result = result {
@@ -88,6 +88,6 @@ struct WorkflowStepsView: View {
 
 struct WorkflowStepsView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkflowStepsView(workflowID: 1)
+        WorkflowStepsView(workflow: Workflow(id: 1, name: "流程名"))
     }
 }

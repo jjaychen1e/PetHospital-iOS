@@ -43,7 +43,7 @@ struct WorkflowListView: View {
                             VStack(alignment: .leading, spacing: 16) {
                                 ForEach(workflows) { workflow in
                                     Button(action: {
-                                        rootViewController?.present(UIHostingController(rootView: WorkflowStepsView(workflowID: workflow.id)), animated: true, completion: nil)
+                                        rootViewController?.present(UIHostingController(rootView: WorkflowStepsView(workflow: workflow)), animated: true, completion: nil)
                                     }) {
                                         HStack {
                                             Text("流程")
