@@ -29,10 +29,10 @@ struct WorkflowStepsView: View {
                     .font(.headline)
                 ForEach(viewModel.workflowSteps) { step in
                     VStack {
-                        if let picture = step.picture {
-                            KFImage(URL(string: picture)!)
+                        if let picture = step.picture, let url = URL(string: picture) {
+                            KFImage(url)
                                 .resizable()
-                                .aspectRatio(contentMode: .fit)
+                                .aspectRatio(contentMode: .fill)
                         }
                         VStack(alignment: .leading, spacing: 12) {
                             HStack {
@@ -51,8 +51,8 @@ struct WorkflowStepsView: View {
                                 .frame(maxHeight: .infinity)
                             Text("操作视频")
                                 .font(.headline)
-                            if let video = step.video {
-                                VideoPlayer(player: AVPlayer(url: URL(string: video)!))
+                            if let video = step.video, let url = URL(string: video) {
+                                VideoPlayer(player: AVPlayer(url: url))
                                     .aspectRatio(16 / 9, contentMode: .fill)
                             } else {
                                 Text("本步骤暂无操作演示视频。")
