@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Kingfisher
+import Introspect
 
 struct WorkflowListView: View {
     
@@ -19,6 +20,8 @@ struct WorkflowListView: View {
 //        Workflow(id: 5, name: "术前消毒流程"),
 //        Workflow(id: 6, name: "术前消毒流程"),
     ]
+    
+    @State private var rootViewController: UIViewController?
     
     var body: some View {
         ScrollView {
@@ -39,7 +42,7 @@ struct WorkflowListView: View {
                         VStack(alignment: .leading, spacing: 16) {
                             ForEach(workflows) { workflow in
                                 Button(action: {
-                                    
+                                    rootViewController?.present(UIHostingController(rootView: WorkflowStepsView()), animated: true, completion: nil)
                                 }) {
                                     HStack {
                                         Text("流程")
@@ -74,6 +77,9 @@ struct WorkflowListView: View {
                     }
                 }
             }
+            .introspectViewController(customize: { (rootViewController) in
+                self.rootViewController = rootViewController
+            })
         }
     }
     

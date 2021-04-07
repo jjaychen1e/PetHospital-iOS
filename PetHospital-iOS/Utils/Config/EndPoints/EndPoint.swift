@@ -17,6 +17,7 @@ enum EndPoint: String {
     
     case allRoles                    = "/simulation/getRoles"
     case allWorkflows                = "/simulation/findProcessByRoleId"
+    case workflowSteps               = "/simulation/findStepsByProcessId"
     
     case allDepartments              = "/guide/getDepartments"
     

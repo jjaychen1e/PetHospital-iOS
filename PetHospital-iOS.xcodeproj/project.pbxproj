@@ -65,6 +65,8 @@
 		63ECC8FC261D98BC00EB692A /* WorkflowListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC8FB261D98BC00EB692A /* WorkflowListView.swift */; };
 		63ECC900261D99FE00EB692A /* Workflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ECC8FF261D99FE00EB692A /* Workflow.swift */; };
 		63ED91B82614555500E335C9 /* ExamCardListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ED91B72614555500E335C9 /* ExamCardListCell.swift */; };
+		63F24A06261DD301006AE204 /* WorkflowStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F24A05261DD301006AE204 /* WorkflowStep.swift */; };
+		63F24A09261DD7B0006AE204 /* WorkflowStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F24A08261DD7B0006AE204 /* WorkflowStepsView.swift */; };
 		63F5D9262611596400832200 /* ContinueWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F5D9252611596400832200 /* ContinueWithButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +131,8 @@
 		63ECC8FB261D98BC00EB692A /* WorkflowListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowListView.swift; sourceTree = "<group>"; };
 		63ECC8FF261D99FE00EB692A /* Workflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workflow.swift; sourceTree = "<group>"; };
 		63ED91B72614555500E335C9 /* ExamCardListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamCardListCell.swift; sourceTree = "<group>"; };
+		63F24A05261DD301006AE204 /* WorkflowStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowStep.swift; sourceTree = "<group>"; };
+		63F24A08261DD7B0006AE204 /* WorkflowStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowStepsView.swift; sourceTree = "<group>"; };
 		63F5D9252611596400832200 /* ContinueWithButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueWithButton.swift; sourceTree = "<group>"; };
 		CC5E8E3341C0B0D5D7ED37D8 /* Pods-PetHospital-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetHospital-iOS.debug.xcconfig"; path = "Target Support Files/Pods-PetHospital-iOS/Pods-PetHospital-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D01D2E739B2144F7741F83AF /* Pods-PetHospital-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetHospital-iOS.release.xcconfig"; path = "Target Support Files/Pods-PetHospital-iOS/Pods-PetHospital-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 			children = (
 				633572F825F90C4400C8F882 /* Role.swift */,
 				63ECC8FF261D99FE00EB692A /* Workflow.swift */,
+				63F24A05261DD301006AE204 /* WorkflowStep.swift */,
 			);
 			path = RolePlaying;
 			sourceTree = "<group>";
@@ -457,6 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				63ECC8FB261D98BC00EB692A /* WorkflowListView.swift */,
+				63F24A08261DD7B0006AE204 /* WorkflowStepsView.swift */,
 			);
 			path = Workflow;
 			sourceTree = "<group>";
@@ -641,6 +647,7 @@
 				637A8A4625FEED430086ABEF /* ResultEntity.swift in Sources */,
 				63ECC8FC261D98BC00EB692A /* WorkflowListView.swift in Sources */,
 				6314DEBA2619A51800AAB97C /* CaseModuleCard.swift in Sources */,
+				63F24A09261DD7B0006AE204 /* WorkflowStepsView.swift in Sources */,
 				633DA0FF26188AA400C3D7AF /* ExamListCard.swift in Sources */,
 				6325038F260B3BCE00E04F6A /* CircularLoadingView.swift in Sources */,
 				63ED91B82614555500E335C9 /* ExamCardListCell.swift in Sources */,
@@ -656,6 +663,7 @@
 				6325037B260B35EF00E04F6A /* Storyboard Scenes.swift in Sources */,
 				6314213026034D0A00F7D8E2 /* NetworkManager.swift in Sources */,
 				638D28F526116B0F00DC32B9 /* WebViewController.swift in Sources */,
+				63F24A06261DD301006AE204 /* WorkflowStep.swift in Sources */,
 				63250372260B336C00E04F6A /* Assets.swift in Sources */,
 				637D12482612ECF40099AA83 /* Disease.swift in Sources */,
 				633DA10F26197B7E00C3D7AF /* UIButton+BackgroundColorWithState.swift in Sources */,

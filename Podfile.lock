@@ -20,6 +20,7 @@ PODS:
   - GTMSessionFetcher/Core (1.5.0)
   - GTMSessionFetcher/Full (1.5.0):
     - GTMSessionFetcher/Core (= 1.5.0)
+  - Introspect (0.1.2)
   - Kingfisher (6.0.1)
   - SnapKit (5.0.1)
   - SwiftGen (6.4.0)
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - Alamofire (~> 5.2)
   - GoogleSignIn
   - GRDB.swift
+  - Introspect
   - Kingfisher (~> 6.0)
   - SnapKit (~> 5.0.0)
   - SwiftGen (~> 6.0)
@@ -42,6 +44,7 @@ SPEC REPOS:
     - GRDB.swift
     - GTMAppAuth
     - GTMSessionFetcher
+    - Introspect
     - Kingfisher
     - SnapKit
     - SwiftGen
@@ -54,11 +57,12 @@ SPEC CHECKSUMS:
   GRDB.swift: 6d44795b19d716e9f09f19018c3bde5b71b67ae9
   GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  Introspect: 85a29d2c5ee4d3d15469ad0b75fd8839f3e72674
   Kingfisher: adde87a4f74f6a3845395769354efff593581740
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
   UIImageColors: d2ef3b0877d203cbb06489eeb78ea8b7788caabe
 
-PODFILE CHECKSUM: e6985df54108c5cf85e3ced24755fcd460c5e9d0
+PODFILE CHECKSUM: 3bd5562822f78fe76cb549a3784486da9f714969
 
 COCOAPODS: 1.9.3

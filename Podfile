@@ -12,4 +12,5 @@ target 'PetHospital-iOS' do
   pod 'GRDB.swift'
   pod 'GoogleSignIn'
   pod 'UIImageColors'
+  pod "Introspect"
 end
