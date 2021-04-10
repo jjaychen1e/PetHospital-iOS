@@ -15,6 +15,7 @@ class ExamListCardViewModel: ObservableObject {
     @Published var endDateTime = "0000-00-00 00:00"
     @Published var action: () -> () = {}
     @Published var finished = true
+    @Published var userScore: Int?
 }
 
 struct ExamListCard: View {
@@ -53,6 +54,14 @@ struct ExamListCard: View {
             }
             .foregroundColor(.primary)
             .frame(maxWidth: .infinity)
+            .overlay (
+                Text("\(viewModel.userScore ?? 0) 分")
+                    .font(.system(.subheadline, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.blue)
+                    .opacity(viewModel.finished && viewModel.userScore != nil ? 1.0 : 0.0)
+                , alignment: .topLeading
+            )
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 28, style: .continuous)

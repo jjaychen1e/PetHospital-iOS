@@ -64,6 +64,7 @@ class ExamCardContentView: UIView, UIContentView {
             self.cardViewModel.startDateTime = exam.startDateTime
             self.cardViewModel.endDateTime = exam.endDateTime
             self.cardViewModel.finished = exam.finished
+            self.cardViewModel.userScore = exam.userScore
             self.cardViewModel.action = configuration.tapAction
         }
     }

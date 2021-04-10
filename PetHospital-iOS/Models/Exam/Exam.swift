@@ -18,6 +18,7 @@ struct Exam: Codable, Hashable {
     var totalScore: Int
     var questionNumber: Int
     var finished: Bool
+    var userScore: Int?
     
     enum CodingKeys: String, CodingKey {
         case examID = "examId"
@@ -30,5 +31,6 @@ struct Exam: Codable, Hashable {
         case totalScore
         case questionNumber = "questionNums"
         case finished
+        case userScore = "usrScore"
     }
 }
