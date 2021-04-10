@@ -25,7 +25,7 @@ struct RoleCardView: View {
                             .font(.system(size: 28))
                     }
                     Text(role.description)
-                        .font(.subheadline)
+                        .font(.body)
                 }
                 .foregroundColor(.primary)
                 .padding()

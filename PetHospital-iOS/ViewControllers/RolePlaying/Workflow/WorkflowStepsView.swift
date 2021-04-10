@@ -48,7 +48,6 @@ struct WorkflowStepsView: View {
                             Text("文字描述")
                                 .font(.headline)
                             Text(step.description)
-                                .frame(maxHeight: .infinity)
                             Text("操作视频")
                                 .font(.headline)
                             if let video = step.video, let url = URL(string: video) {
@@ -60,7 +59,6 @@ struct WorkflowStepsView: View {
                         }
                         .padding()
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(
                         Color(Asset.dynamicSecondaryBackground.color)
                     )
@@ -70,6 +68,8 @@ struct WorkflowStepsView: View {
             }
             .padding()
         }
+        .frame(minWidth: 0, maxWidth: .infinity)
+        .frame(minHeight: 0, maxHeight: .infinity)
         .onAppear {
             let parameter = ["processId": workflow.id]
             
