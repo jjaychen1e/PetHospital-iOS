@@ -24,12 +24,19 @@ class TouringViewController: UIViewController {
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, Department>!
     
+    private var refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setViewHierachy()
-        
+        fetchDepartments()
+    }
+    
+    private func fetchDepartments() {
         NetworkManager.shared.fetch(endPoint: .allDepartments, method: .POST) { (result: ResultEntity<[Department]>?) in
+            self.refreshControl.endRefreshing()
+            
             if let result = result {
                 if result.code == .success, let departments = result.data {
                     self.departments = departments
@@ -69,6 +76,10 @@ class TouringViewController: UIViewController {
         collectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        collectionView.refreshControl = self.refreshControl
+        self.refreshControl.addAction(UIAction(handler: { (action) in
+            self.fetchDepartments()
+        }), for: .valueChanged)
         
         setDataSource()
     }

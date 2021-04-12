@@ -19,12 +19,18 @@ class DiseaseListViewController: UIViewController {
     
     var dataSource: UICollectionViewDiffableDataSource<Section, AnyHashable>! = nil
     
+    private var refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
         configureDataSource()
-        
+        fetchDiseases()
+    }
+    
+    private func fetchDiseases() {
         NetworkManager.shared.fetch(endPoint: .allDiseases) { (result: ResultEntity<[Disease]>?) in
+            self.refreshControl.endRefreshing()
             if let result = result {
                 if result.code == .success, let data = result.data {
                     self.diseases = data
@@ -81,6 +87,12 @@ extension DiseaseListViewController {
         }
         collectionView.backgroundColor = Asset.dynamicBackground.color
         collectionView.delegate = self
+        
+        collectionView.refreshControl = refreshControl
+        refreshControl.addAction(UIAction(handler: { (action) in
+            self.fetchDiseases()
+        }), for: .valueChanged)
+        
         self.collectionView = collectionView
     }
     

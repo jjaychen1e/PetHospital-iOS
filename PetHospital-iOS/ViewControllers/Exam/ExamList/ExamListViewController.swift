@@ -19,6 +19,8 @@ class ExamListViewController: UIViewController {
     
     var dataSource: UICollectionViewDiffableDataSource<Section, Exam>! = nil
     
+    private var refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +36,8 @@ class ExamListViewController: UIViewController {
         let parameters = ["usrId": GlobalCache.shared.loginResult?.user.id]
         
         NetworkManager.shared.fetch(endPoint: .allExams, method: .POST, parameters: parameters) { (result: ResultEntity<[Exam]>?) in
+            self.refreshControl.endRefreshing()
+            
             if let result = result {
                 if result.code == .success, let data = result.data {
                     self.exams = data
@@ -65,6 +69,12 @@ extension ExamListViewController {
             make.edges.equalToSuperview()
         }
         collectionView.backgroundColor = .clear
+        
+        collectionView.refreshControl = refreshControl
+        refreshControl.addAction(UIAction(handler: { (action) in
+            self.fetchData()
+        }), for: .valueChanged)
+        
         self.collectionView = collectionView
     }
     
