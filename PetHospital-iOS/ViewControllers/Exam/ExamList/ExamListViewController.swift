@@ -100,6 +100,12 @@ extension ExamListViewController {
                         alertController.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
                         self.present(alertController, animated: true, completion: nil)
                     } else {
+                        if exam.questionNumber == 0 {
+                            let alertController = UIAlertController(title: "该场考试尚未就绪", message: "该场考试暂无考试内容，请稍后再试。", preferredStyle: .alert)
+                            alertController.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
+                            self.present(alertController, animated: true, completion: nil)
+                            return
+                        }
                         let examVC = ExamDetailViewController()
                         examVC.exam = exam
                         examVC.examListViewController = self

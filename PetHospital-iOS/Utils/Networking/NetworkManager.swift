@@ -37,12 +37,12 @@ class NetworkManager {
     
     /// We should provide a non-generic version if parameter is `nil`. And this method can only support GET.
     @discardableResult
-    func fetch<T: Decodable>(endPoint: EndPoint, method: HTTPMethod = .GET, completionHandler: @escaping (T?) -> ()) -> DataRequest {
+    func fetch<T: Decodable>(endPoint: Endpoint, method: HTTPMethod = .GET, completionHandler: @escaping (T?) -> ()) -> DataRequest {
         fetch(fullURL: BaseAddress + endPoint.rawValue, method: method, completionHandler: completionHandler)
     }
     
     @discardableResult
-    func fetch<T: Decodable, P: Encodable>(endPoint: EndPoint, method: HTTPMethod = .GET, parameters: P? = nil, completionHandler: @escaping (T?) -> ()) -> DataRequest {
+    func fetch<T: Decodable, P: Encodable>(endPoint: Endpoint, method: HTTPMethod = .GET, parameters: P? = nil, completionHandler: @escaping (T?) -> ()) -> DataRequest {
         fetch(fullURL: BaseAddress + endPoint.rawValue,
               method: method,
               parameters: parameters, completionHandler: completionHandler)
@@ -92,6 +92,11 @@ class NetworkManager {
                 }
                 
                 if let data = request.data {
+                    
+                    #if DEBUG
+                        print("Network data parsed:\n - URL: \(request.request?.url?.absoluteString ?? "nil")\n - Decoded string from data: \(String(data: data, encoding: .utf8) ?? "nil")")
+                    #endif
+                    
                     do {
                         let decodeResult = try JSONDecoder().decode(T.self, from: data)
                         completionHandler(decodeResult)

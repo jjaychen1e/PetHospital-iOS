@@ -34,13 +34,13 @@ struct DepartmentDetail2D: View {
                         Text(viewModel.department.description)
                         Spacer()
                     }
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(
-                            Color(Asset.dynamicSecondaryBackground.color)
-                        )
-                        .cornerRadius(12)
-                        .shadow(color: Color.black.opacity(0.2), radius: 4, x: 1, y: 1)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(
+                        Color(Asset.dynamicSecondaryBackground.color)
+                    )
+                    .cornerRadius(12)
+                    .shadow(color: Color.black.opacity(0.2), radius: 4, x: 1, y: 1)
                     
                     HStack(alignment: .top) {
                         Text("科室设备")
@@ -52,7 +52,7 @@ struct DepartmentDetail2D: View {
                                 Spacer()
                             }
                         } else {
-                            VStack {
+                            VStack(alignment: .leading) {
                                 ForEach(viewModel.department.equipments) { equipment in
                                     HStack(alignment: .top) {
                                         KFImage(URL(string: equipment.picture)!)
@@ -65,7 +65,6 @@ struct DepartmentDetail2D: View {
                                                 .fontWeight(.bold)
                                             Text(equipment.description)
                                         }
-                                        Spacer()
                                     }
                                 }
                             }
@@ -73,6 +72,38 @@ struct DepartmentDetail2D: View {
                         
                         Spacer()
                     }
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(
+                        Color(Asset.dynamicSecondaryBackground.color)
+                    )
+                    .cornerRadius(12)
+                    .shadow(color: Color.black.opacity(0.2), radius: 4, x: 1, y: 1)
+                    
+                    if viewModel.department.medicines?.count ?? 0 > 0 {
+                        HStack(alignment: .top) {
+                            Text("供应药品")
+                                .font(.headline)
+                            
+                            VStack(alignment: .leading) {
+                                ForEach(viewModel.department.medicines!) { medicine in
+                                    HStack(alignment: .top) {
+                                        KFImage(URL(string: medicine.picture)!)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 35, height: 35)
+                                        VStack(alignment: .leading) {
+                                            Text(medicine.name)
+                                                .font(.body)
+                                                .fontWeight(.bold)
+                                            Text(medicine.description)
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            Spacer()
+                        }
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background(
@@ -80,6 +111,7 @@ struct DepartmentDetail2D: View {
                         )
                         .cornerRadius(12)
                         .shadow(color: Color.black.opacity(0.2), radius: 4, x: 1, y: 1)
+                    }
                 }
                 .padding(.horizontal)
             }

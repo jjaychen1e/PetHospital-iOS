@@ -62,11 +62,11 @@ class DiseaseCaseDetailViewController: UIViewController {
         stepStackView.axis = .vertical
         stepStackView.alignment = .fill
         stepStackView.distribution = .fill
-        let inspectionView = UIHostingController(rootView: CaseModuleCard(title: "病例检查", description: diseaseCase.inspection, index: 1)).view!
+        let inspectionView = UIHostingController(rootView: CaseModuleCard(title: "病例检查", description: diseaseCase.inspection, index: 1, imageURL: diseaseCase.inspectionImageURL, videoURL: diseaseCase.inspectionVideoURL)).view!
         inspectionView.backgroundColor = .clear
-        let diagnosisView = UIHostingController(rootView: CaseModuleCard(title: "病例诊断", description: diseaseCase.diagnosis, index: 2)).view!
+        let diagnosisView = UIHostingController(rootView: CaseModuleCard(title: "病例诊断", description: diseaseCase.diagnosis, index: 2, imageURL: diseaseCase.diagnosisImageURL, videoURL: diseaseCase.diagnosisVideoURL)).view!
         diagnosisView.backgroundColor = .clear
-        let treatmentView = UIHostingController(rootView: CaseModuleCard(title: "治疗方案", description: diseaseCase.treatment, index: 3)).view!
+        let treatmentView = UIHostingController(rootView: CaseModuleCard(title: "治疗方案", description: diseaseCase.treatment, index: 3, imageURL: diseaseCase.treatmentImageURL, videoURL: diseaseCase.treatmentVideoURL)).view!
         treatmentView.backgroundColor = .clear
         stepStackView.addArrangedSubview(inspectionView)
         stepStackView.addArrangedSubview(diagnosisView)

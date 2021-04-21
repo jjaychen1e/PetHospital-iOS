@@ -6,27 +6,44 @@
 //
 
 import SwiftUI
+import AVKit
+import Kingfisher
 
 struct CaseModuleCard: View {
     var title: String
     var description: String
     var index: Int
+    var imageURL: String?
+    var videoURL: String?
     
     var body: some View {
-        HStack(alignment: .top, spacing: 12) {
-            Image(systemName: "\(index).circle.fill")
-                .resizable()
-                .frame(width: 24, height: 24)
-                .foregroundColor(.blue)
-            VStack(alignment: .leading, spacing: 12) {
-                Text(title)
-                    .font(.headline)
-                Text(description)
+        VStack(alignment: .leading) {
+            if let picture = imageURL, let url = URL(string: picture) {
+                KFImage(url)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
             }
-            Spacer()
+            
+            HStack(alignment: .top, spacing: 12) {
+                Image(systemName: "\(index).circle.fill")
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                    .foregroundColor(.blue)
+                VStack(alignment: .leading, spacing: 12) {
+                    Text(title)
+                        .font(.headline)
+                    Text(description)
+                }
+                Spacer()
+            }
+            .padding()
+            
+            if let video = videoURL, let url = URL(string: video) {
+                VideoPlayer(player: AVPlayer(url: url))
+                    .aspectRatio(16 / 9, contentMode: .fill)
+            }
         }
         .frame(maxWidth: .infinity)
-        .padding()
         .background(
             Color(Asset.dynamicSecondaryBackground.color)
         )

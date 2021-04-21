@@ -9,7 +9,7 @@ import Foundation
 
 let BaseAddress = "http://139.9.217.28:8080"
 
-enum EndPoint: String {
+enum Endpoint: String {
     case register                    = "/oauth/register/all"
     case loginCheck                  = "/oauth/login/check"
     case login                       = "/oauth/login/normal"
@@ -30,7 +30,7 @@ enum EndPoint: String {
     
     case examPaperContent            = "/paper/findPaperById"
     
-    var fullEndPointURL: String {
+    var fullEndpointURL: String {
         get {
             BaseAddress + self.rawValue
         }

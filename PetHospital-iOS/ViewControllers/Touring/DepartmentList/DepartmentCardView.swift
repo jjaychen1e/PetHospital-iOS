@@ -9,7 +9,7 @@ import SwiftUI
 import Kingfisher
 
 class DepartmentCardViewModel: ObservableObject {
-    @Published var department: Department = Department(id: 0, name: "专科检查室", description: "负责对眼科、骨科、神经科、心脏科等专科疾病的检查，如眼科（检眼镜检查、眼压检查、裂隙灯检查、眼底检查、泪液分泌量检查等）、心脏科检查（心脏听诊、心电图检查等）、神经学检查（步态检查、各种反射检查等）等。", picture: "http://152.136.173.30/images/pethospital/HospitalClinic.jpg", roleName: "", position: [], equipments: [])
+    @Published var department: Department = Department(id: 0, name: "专科检查室", description: "负责对眼科、骨科、神经科、心脏科等专科疾病的检查，如眼科（检眼镜检查、眼压检查、裂隙灯检查、眼底检查、泪液分泌量检查等）、心脏科检查（心脏听诊、心电图检查等）、神经学检查（步态检查、各种反射检查等）等。", picture: "http://152.136.173.30/images/pethospital/HospitalClinic.jpg", roleName: "", position: [], equipments: [], medicines: [])
     @Published var tapAction: () -> () = {}
 }
 

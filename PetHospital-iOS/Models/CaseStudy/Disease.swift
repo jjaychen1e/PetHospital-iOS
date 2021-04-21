@@ -26,6 +26,12 @@ struct DiseaseCase: Codable, Hashable {
     var treatment: String
     var createTime: String
     var updateTime: String
+    var inspectionImageURL: String?
+    var inspectionVideoURL: String?
+    var diagnosisImageURL: String?
+    var diagnosisVideoURL: String?
+    var treatmentImageURL: String?
+    var treatmentVideoURL: String?
     
     enum CodingKeys: String, CodingKey {
         case caseID = "caseId"
@@ -35,6 +41,12 @@ struct DiseaseCase: Codable, Hashable {
         case treatment
         case createTime
         case updateTime
+        case inspectionImageURL = "inspectionPhotoUri"
+        case inspectionVideoURL = "inspectionVideoUri"
+        case diagnosisImageURL = "diagnosisPhotoUri"
+        case diagnosisVideoURL = "diagnosisVideoUri"
+        case treatmentImageURL = "treatmentPhotoUri"
+        case treatmentVideoURL = "treatmentVideoUri"
     }
 }
 
