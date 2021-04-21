@@ -45,7 +45,6 @@
 		637D12602612EF5A0099AA83 /* DiseaseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D125F2612EF5A0099AA83 /* DiseaseListViewController.swift */; };
 		638D28F526116B0F00DC32B9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638D28F426116B0F00DC32B9 /* WebViewController.swift */; };
 		638D28F92611773200DC32B9 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638D28F82611773200DC32B9 /* URL+Extension.swift */; };
-		638D2908261190AA00DC32B9 /* GoogleSignIn.plist in Resources */ = {isa = PBXBuildFile; fileRef = 638D2907261190AA00DC32B9 /* GoogleSignIn.plist */; };
 		63A724C12608E7EE00A27695 /* RegisterPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A724C02608E7EE00A27695 /* RegisterPasswordViewController.swift */; };
 		63A724C42608E83100A27695 /* UIViewController+UINavigationBarItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A724C32608E83100A27695 /* UIViewController+UINavigationBarItem+Extension.swift */; };
 		63A724C82608EA1C00A27695 /* LoginPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A724C72608EA1C00A27695 /* LoginPasswordViewController.swift */; };
@@ -109,7 +108,6 @@
 		637D125F2612EF5A0099AA83 /* DiseaseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseListViewController.swift; sourceTree = "<group>"; };
 		638D28F426116B0F00DC32B9 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		638D28F82611773200DC32B9 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
-		638D2907261190AA00DC32B9 /* GoogleSignIn.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoogleSignIn.plist; sourceTree = "<group>"; };
 		63A724C02608E7EE00A27695 /* RegisterPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPasswordViewController.swift; sourceTree = "<group>"; };
 		63A724C32608E83100A27695 /* UIViewController+UINavigationBarItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UINavigationBarItem+Extension.swift"; sourceTree = "<group>"; };
 		63A724C72608EA1C00A27695 /* LoginPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordViewController.swift; sourceTree = "<group>"; };
@@ -408,7 +406,6 @@
 				63C9B1EC25F88C6E0093DD91 /* Assets.xcassets */,
 				63C9B1EE25F88C6E0093DD91 /* LaunchScreen.storyboard */,
 				63250375260B35C200E04F6A /* swiftgen.yml */,
-				638D2907261190AA00DC32B9 /* GoogleSignIn.plist */,
 				63C9B1F125F88C6E0093DD91 /* Info.plist */,
 				63170F04261AFE6B00201C0D /* MainTabBarController.swift */,
 			);
@@ -552,7 +549,6 @@
 				63C9B1ED25F88C6E0093DD91 /* Assets.xcassets in Resources */,
 				63C9B1EB25F88C6C0093DD91 /* Main.storyboard in Resources */,
 				637D125D2612EF0B0099AA83 /* Touring.storyboard in Resources */,
-				638D2908261190AA00DC32B9 /* GoogleSignIn.plist in Resources */,
 				637D12512612EEC90099AA83 /* CaseStudy.storyboard in Resources */,
 				63250376260B35C200E04F6A /* swiftgen.yml in Resources */,
 				637D12592612EEFE0099AA83 /* RolePlaying.storyboard in Resources */,
