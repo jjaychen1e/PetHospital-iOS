@@ -32,7 +32,7 @@ struct WorkflowStepsView: View {
                         if let picture = step.picture, let url = URL(string: picture) {
                             KFImage(url)
                                 .resizable()
-                                .aspectRatio(contentMode: .fill)
+                                .aspectRatio(contentMode: .fit)
                         }
                         VStack(alignment: .leading, spacing: 12) {
                             HStack {
