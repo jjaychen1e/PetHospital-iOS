@@ -14,7 +14,7 @@ We are using [CocoaPods](https://cocoapods.org) to manage dependencies. Consider
 
 `pod install`
 
-to install pod dependencies. After installation, Open `PetHospital-iOS.xcworkspace`(rather than `PetHospital-iOS.xcodeproj`) with Xcode. Note that if you want to install an app into iPhone using Xcode, you need a developer account(free). There's no limitation when installing into iOS simulators.
+to install pod dependencies. After installation, open `PetHospital-iOS.xcworkspace`(rather than `PetHospital-iOS.xcodeproj`) with Xcode. Note that if you want to install an app into iPhone using Xcode, you need a developer account(free). There's no limitation when installing into iOS simulators.
 
 
 
