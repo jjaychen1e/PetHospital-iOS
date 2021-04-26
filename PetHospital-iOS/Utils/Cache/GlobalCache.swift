@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class GlobalCache {
     
@@ -24,6 +25,21 @@ class GlobalCache {
     
     private init() {
         
+    }
+    
+    @objc func clearLoginCache() {
+        do {
+            try GRDBHelper.shared.dbQueue.write { db in
+                try GlobalCache.shared.loginResult?.delete(db)
+            }
+            
+            if let nvc = (UIApplication.shared.delegate as! AppDelegate).rootNavigationController {
+                nvc.setNavigationBarHidden(false, animated: false)
+                nvc.setViewControllers([StoryboardScene.Login.initialScene.instantiate()], animated: true)
+            }
+        } catch {
+            print(error)
+        }
     }
     
 }

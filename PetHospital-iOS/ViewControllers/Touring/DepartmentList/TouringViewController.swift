@@ -31,6 +31,12 @@ class TouringViewController: UIViewController {
         
         setViewHierachy()
         fetchDepartments()
+        
+        let barItem = UIBarButtonItem()
+        barItem.title = "退出登录"
+        navigationItem.rightBarButtonItem = barItem
+        barItem.target = GlobalCache.shared
+        barItem.action = #selector(GlobalCache.shared.clearLoginCache)
     }
     
     private func fetchDepartments() {

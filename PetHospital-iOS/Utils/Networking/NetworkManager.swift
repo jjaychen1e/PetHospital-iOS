@@ -115,7 +115,7 @@ class NetworkManager {
     }
 }
 
-public enum HTTPMethod: String {
+enum HTTPMethod: String {
     case GET  = "GET"
     case POST = "POST"
     

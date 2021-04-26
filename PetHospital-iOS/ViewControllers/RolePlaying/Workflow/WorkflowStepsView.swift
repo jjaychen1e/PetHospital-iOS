@@ -48,6 +48,7 @@ struct WorkflowStepsView: View {
                             Text("文字描述")
                                 .font(.headline)
                             Text(step.description)
+//                                .frame(minHeight: 0, maxHeight: .infinity)
                             Text("操作视频")
                                 .font(.headline)
                             if let video = step.video, let url = URL(string: video) {

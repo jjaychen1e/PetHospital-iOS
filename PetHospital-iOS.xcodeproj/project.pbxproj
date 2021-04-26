@@ -50,6 +50,7 @@
 		63A724C82608EA1C00A27695 /* LoginPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A724C72608EA1C00A27695 /* LoginPasswordViewController.swift */; };
 		63A724D42608F6B900A27695 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A724D32608F6B900A27695 /* ToastView.swift */; };
 		63A84A5025F89F5C00AE8628 /* TouringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A84A4F25F89F5C00AE8628 /* TouringViewController.swift */; };
+		63AF27F02635A30C00331FD8 /* GoogleSignIn.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63AF27EF2635A30C00331FD8 /* GoogleSignIn.plist */; };
 		63C9B1E425F88C6C0093DD91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9B1E325F88C6C0093DD91 /* AppDelegate.swift */; };
 		63C9B1E625F88C6C0093DD91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9B1E525F88C6C0093DD91 /* SceneDelegate.swift */; };
 		63C9B1EB25F88C6C0093DD91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C9B1E925F88C6C0093DD91 /* Main.storyboard */; };
@@ -113,6 +114,7 @@
 		63A724C72608EA1C00A27695 /* LoginPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordViewController.swift; sourceTree = "<group>"; };
 		63A724D32608F6B900A27695 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		63A84A4F25F89F5C00AE8628 /* TouringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouringViewController.swift; sourceTree = "<group>"; };
+		63AF27EF2635A30C00331FD8 /* GoogleSignIn.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoogleSignIn.plist; sourceTree = "<group>"; };
 		63C9B1E025F88C6C0093DD91 /* PetHospital-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PetHospital-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C9B1E325F88C6C0093DD91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63C9B1E525F88C6C0093DD91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 				63250375260B35C200E04F6A /* swiftgen.yml */,
 				63C9B1F125F88C6E0093DD91 /* Info.plist */,
 				63170F04261AFE6B00201C0D /* MainTabBarController.swift */,
+				63AF27EF2635A30C00331FD8 /* GoogleSignIn.plist */,
 			);
 			path = "PetHospital-iOS";
 			sourceTree = "<group>";
@@ -415,17 +418,17 @@
 		63E614D7260818C300F259B6 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				63E614D8260818CD00F259B6 /* EndPoints */,
+				63E614D8260818CD00F259B6 /* Endpoint */,
 			);
 			path = Config;
 			sourceTree = "<group>";
 		};
-		63E614D8260818CD00F259B6 /* EndPoints */ = {
+		63E614D8260818CD00F259B6 /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
 				63E614D92608190200F259B6 /* Endpoint.swift */,
 			);
-			path = EndPoints;
+			path = Endpoint;
 			sourceTree = "<group>";
 		};
 		63E614DD2608212200F259B6 /* Cache */ = {
@@ -550,6 +553,7 @@
 				63C9B1EB25F88C6C0093DD91 /* Main.storyboard in Resources */,
 				637D125D2612EF0B0099AA83 /* Touring.storyboard in Resources */,
 				637D12512612EEC90099AA83 /* CaseStudy.storyboard in Resources */,
+				63AF27F02635A30C00331FD8 /* GoogleSignIn.plist in Resources */,
 				63250376260B35C200E04F6A /* swiftgen.yml in Resources */,
 				637D12592612EEFE0099AA83 /* RolePlaying.storyboard in Resources */,
 			);

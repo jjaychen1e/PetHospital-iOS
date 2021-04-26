@@ -95,22 +95,36 @@ extension ExamListViewController {
             cell.automaticallyUpdatesBackgroundConfiguration = false
             cell.tapAction = { [weak self] in
                 if let self = self {
-                    if exam.finished {
-                        let alertController = UIAlertController(title: "您已参加过这场考试", message: "请勿重复参加考试。", preferredStyle: .alert)
-                        alertController.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
-                        self.present(alertController, animated: true, completion: nil)
-                    } else {
-                        if exam.questionNumber == 0 {
-                            let alertController = UIAlertController(title: "该场考试尚未就绪", message: "该场考试暂无考试内容，请稍后再试。", preferredStyle: .alert)
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
+                    if let startDateTime = dateFormatter.date(from: exam.startDateTime),
+                       let endDateTime = dateFormatter.date(from: exam.endDateTime) {
+                        let currentDateTime = Date()
+                        if currentDateTime.timeIntervalSince1970 >= startDateTime.timeIntervalSince1970,
+                           currentDateTime.timeIntervalSince1970 < endDateTime.timeIntervalSince1970 {
+                            if exam.finished {
+                                let alertController = UIAlertController(title: "您已参加过这场考试", message: "请勿重复参加考试。", preferredStyle: .alert)
+                                alertController.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
+                                self.present(alertController, animated: true, completion: nil)
+                            } else {
+                                if exam.questionNumber == 0 {
+                                    let alertController = UIAlertController(title: "该场考试尚未就绪", message: "该场考试暂无考试内容，请稍后再试。", preferredStyle: .alert)
+                                    alertController.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
+                                    self.present(alertController, animated: true, completion: nil)
+                                    return
+                                }
+                                let examVC = ExamDetailViewController()
+                                examVC.exam = exam
+                                examVC.examListViewController = self
+                                self.present(examVC, animated: true) {
+                                    
+                                }
+                            }
+                        } else {
+                            let alertController = UIAlertController(title: "考试时间未到", message: "尚未到该场考试时间，请在考试时间范围内参加考试。", preferredStyle: .alert)
                             alertController.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
                             self.present(alertController, animated: true, completion: nil)
                             return
-                        }
-                        let examVC = ExamDetailViewController()
-                        examVC.exam = exam
-                        examVC.examListViewController = self
-                        self.present(examVC, animated: true) {
-                            
                         }
                     }
                 }
