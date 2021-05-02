@@ -62,16 +62,13 @@ class LoginHelper {
                     }
                     
                     completionHandler(true)
-                    return
                 } else {
                     print(result)
                     completionHandler(false)
-                    return
                 }
             } failureHandler: { error in
                 print(error)
                 completionHandler(false)
-                return
             }
         }
     }

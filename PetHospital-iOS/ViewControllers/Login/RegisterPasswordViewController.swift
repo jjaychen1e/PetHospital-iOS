@@ -63,13 +63,11 @@ class RegisterPasswordViewController: UIViewController {
                 if result.code == .success, let data = result.data, data == true {
                     LoginHelper.login(with: LoginParameter(username: username, password: password)) { (result) in
                         completionHandler(result)
-                        return
                     }
                 } else {
                     // 注册失败.. 可能是刚好被人注册了
                     print(result)
                     completionHandler(false)
-                    return
                 }
             } failureHandler: { error in
                 print(error)

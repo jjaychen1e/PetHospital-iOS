@@ -77,16 +77,15 @@ class LoginViewController: UIViewController {
             result.resolve { result in
                 if result.code == .success, let data = result.data {
                     completionHandler(data)
-                    return
+                } else {
+                    print(result)
+                    completionHandler(false)
                 }
-                print(result)
+            } failureHandler: { error in
+                print(error)
+                // 请求出错时不应该跳转
                 completionHandler(false)
-                return
             }
-            
-            // 请求出错时不应该跳转
-            completionHandler(false)
-            return
         }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: UIHostingController(rootView: CircularLoadingView().background(Color(Asset.dynamicBackground.color))).view!)
