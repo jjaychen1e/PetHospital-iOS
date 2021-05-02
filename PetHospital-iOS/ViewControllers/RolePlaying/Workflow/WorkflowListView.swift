@@ -71,8 +71,8 @@ struct WorkflowListView: View {
             }
             .onAppear {
                 let parameters = ["roleId": role.id]
-                NetworkManager.shared.fetch(endPoint: .allWorkflows, method: .POST, parameters: parameters) { (result: ResultEntity<[Workflow]>?) in
-                    if let result = result {
+                NetworkManager.shared.fetch(endPoint: .allWorkflows, method: .POST, parameters: parameters) { (result: Result<ResultEntity<[Workflow]>, Error>) in
+                    result.resolve { result in
                         if result.code == .success, let workflows = result.data {
                             self.workflows = workflows
                         } else {

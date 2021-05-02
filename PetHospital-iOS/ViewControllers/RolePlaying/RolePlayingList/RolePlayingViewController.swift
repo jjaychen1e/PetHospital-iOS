@@ -26,10 +26,10 @@ class RolePlayingViewController: UIViewController {
     }
     
     private func fetchRoles() {
-        NetworkManager.shared.fetch(endPoint: .allRoles, method: .POST) { (result: ResultEntity<[Role]>?) in
+        NetworkManager.shared.fetch(endPoint: .allRoles, method: .POST) { (result: Result<ResultEntity<[Role]>, Error>) in
             self.refreshControl.endRefreshing()
             
-            if let result = result {
+            result.resolve { result in
                 if result.code == .success, let roles = result.data {
                     self.roles = roles
                     

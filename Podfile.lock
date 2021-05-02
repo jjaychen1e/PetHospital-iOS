@@ -22,6 +22,15 @@ PODS:
     - GTMSessionFetcher/Core (= 1.5.0)
   - Introspect (0.1.2)
   - Kingfisher (6.0.1)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
   - SnapKit (5.0.1)
   - SwiftGen (6.4.0)
   - UIImageColors (2.1.0)
@@ -32,6 +41,7 @@ DEPENDENCIES:
   - GRDB.swift
   - Introspect
   - Kingfisher (~> 6.0)
+  - PromiseKit (~> 6.13)
   - SnapKit (~> 5.0.0)
   - SwiftGen (~> 6.0)
   - UIImageColors
@@ -46,6 +56,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - Introspect
     - Kingfisher
+    - PromiseKit
     - SnapKit
     - SwiftGen
     - UIImageColors
@@ -59,10 +70,11 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   Introspect: 85a29d2c5ee4d3d15469ad0b75fd8839f3e72674
   Kingfisher: adde87a4f74f6a3845395769354efff593581740
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
   UIImageColors: d2ef3b0877d203cbb06489eeb78ea8b7788caabe
 
-PODFILE CHECKSUM: 3bd5562822f78fe76cb549a3784486da9f714969
+PODFILE CHECKSUM: 13e5ff64e809521ba190b27b72f35fbb36cdf77a
 
 COCOAPODS: 1.9.3

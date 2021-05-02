@@ -29,9 +29,9 @@ class DiseaseListViewController: UIViewController {
     }
     
     private func fetchDiseases() {
-        NetworkManager.shared.fetch(endPoint: .allDiseases) { (result: ResultEntity<[Disease]>?) in
+        NetworkManager.shared.fetch(endPoint: .allDiseases) { (result: Result<ResultEntity<[Disease]>, Error>) in
             self.refreshControl.endRefreshing()
-            if let result = result {
+            result.resolve { result in
                 if result.code == .success, let data = result.data {
                     self.diseases = data
                     
@@ -53,8 +53,8 @@ class DiseaseListViewController: UIViewController {
             var updatedDisease = diseases
             for (index, disease) in originalDiseaseEnumerated {
                 for (index2, subDisease) in (disease.children ?? []).enumerated() {
-                    NetworkManager.shared.fetch(endPoint: .findDiseaseCase, method: .GET, parameters: ["name" : subDisease.name]) { (result: ResultEntity<DiseaseCaseResult>?) in
-                        if let result = result {
+                    NetworkManager.shared.fetch(endPoint: .findDiseaseCase, method: .GET, parameters: ["name" : subDisease.name]) { (result: Result<ResultEntity<DiseaseCaseResult>, Error>) in
+                        result.resolve { result in
                             if result.code == .success, let cases = result.data {
                                 updatedDisease[index].children![index2].cases = cases.content
                                 self.diseases = updatedDisease

@@ -22,6 +22,10 @@ class DataRequest {
     }
 }
 
+enum NetworkManagerError: Error {
+    case emptyData
+}
+
 /// This class is an encapsulation of Alamofire for decoupling. We define our classes, enums, and structs like
 /// `NetworkManager` and `HTTPMethod`, and use them in all other places in our code, instead of using
 /// Alamofire directly. So one day, if we want to replace Alamofire with another framework, the only thing we
@@ -37,12 +41,12 @@ class NetworkManager {
     
     /// We should provide a non-generic version if parameter is `nil`. And this method can only support GET.
     @discardableResult
-    func fetch<T: Decodable>(endPoint: Endpoint, method: HTTPMethod = .GET, completionHandler: @escaping (T?) -> ()) -> DataRequest {
+    func fetch<T: Decodable>(endPoint: Endpoint, method: HTTPMethod = .GET, completionHandler: @escaping (Result<T, Error>) -> ()) -> DataRequest {
         fetch(fullURL: BaseAddress + endPoint.rawValue, method: method, completionHandler: completionHandler)
     }
     
     @discardableResult
-    func fetch<T: Decodable, P: Encodable>(endPoint: Endpoint, method: HTTPMethod = .GET, parameters: P? = nil, completionHandler: @escaping (T?) -> ()) -> DataRequest {
+    func fetch<T: Decodable, P: Encodable>(endPoint: Endpoint, method: HTTPMethod = .GET, parameters: P? = nil, completionHandler: @escaping (Result<T, Error>) -> ()) -> DataRequest {
         fetch(fullURL: BaseAddress + endPoint.rawValue,
               method: method,
               parameters: parameters, completionHandler: completionHandler)
@@ -50,28 +54,28 @@ class NetworkManager {
     
     /// We should provide a non-generic version if parameter is `nil`. And this method can only support GET.
     @discardableResult
-    func fetch<T: Decodable>(fullURL: String, method: HTTPMethod = .GET, completionHandler: @escaping (T?) -> ()) -> DataRequest {
+    func fetch<T: Decodable>(fullURL: String, method: HTTPMethod = .GET, completionHandler: @escaping (Result<T, Error>) -> ()) -> DataRequest {
         // TODO: Do we need json encoder?
         let request = AF.request(fullURL,
                                  method: method.convertToAlamofireHTTPMethod())
             .response { (request) in
                 if let error = request.error {
                     print(error)
-                    completionHandler(nil)
+                    completionHandler(.failure(error))
                     return
                 }
                 
                 if let data = request.data {
                     do {
                         let decodeResult = try JSONDecoder().decode(T.self, from: data)
-                        completionHandler(decodeResult)
+                        completionHandler(.success(decodeResult))
                     } catch {
                         print("Error encoutered when decode:\n - \(error).\n - URL: \(request.request?.url?.absoluteString ?? "nil")\n - Decoded string from data: \(String(data: data, encoding: .utf8) ?? "nil")")
-                        completionHandler(nil)
+                        completionHandler(.failure(error))
                         return
                     }
                 } else {
-                    completionHandler(nil)
+                    completionHandler(.failure(NetworkManagerError.emptyData))
                     return
                 }
             }
@@ -79,7 +83,7 @@ class NetworkManager {
     }
     
     @discardableResult
-    func fetch<T: Decodable, P: Encodable>(fullURL: String, method: HTTPMethod = .GET, parameters: P? = nil, completionHandler: @escaping (T?) -> ()) -> DataRequest {
+    func fetch<T: Decodable, P: Encodable>(fullURL: String, method: HTTPMethod = .GET, parameters: P? = nil, completionHandler: @escaping (Result<T, Error>) -> ()) -> DataRequest {
         let request = AF.request(fullURL,
                                  method: method.convertToAlamofireHTTPMethod(),
                                  parameters: parameters,
@@ -87,7 +91,7 @@ class NetworkManager {
             .response { (request) in
                 if let error = request.error {
                     print(error)
-                    completionHandler(nil)
+                    completionHandler(.failure(error))
                     return
                 }
                 
@@ -99,15 +103,15 @@ class NetworkManager {
                     
                     do {
                         let decodeResult = try JSONDecoder().decode(T.self, from: data)
-                        completionHandler(decodeResult)
+                        completionHandler(.success(decodeResult))
                         return
                     } catch {
                         print("Error encoutered when decode:\n - \(error).\n - URL: \(request.request?.url?.absoluteString ?? "nil")\n - Decoded string from data: \(String(data: data, encoding: .utf8) ?? "nil")")
-                        completionHandler(nil)
+                        completionHandler(.failure(error))
                         return
                     }
                 } else {
-                    completionHandler(nil)
+                    completionHandler(.failure(NetworkManagerError.emptyData))
                     return
                 }
             }

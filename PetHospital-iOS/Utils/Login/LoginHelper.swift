@@ -41,8 +41,8 @@ class LoginHelper {
     }
     
     static func login(with parameter: LoginParameter, completionHandler: @escaping (Bool) -> ()) {
-        NetworkManager.shared.fetch(endPoint: .login, method: .POST, parameters: parameter) { (result: ResultEntity<LoginResult>?) in
-            if let result = result {
+        NetworkManager.shared.fetch(endPoint: .login, method: .POST, parameters: parameter) { (result: Result<ResultEntity<LoginResult>, Error>) in
+            result.resolve { result in
                 guard result.code == .success else {
                     print(result)
                     completionHandler(false)
@@ -65,16 +65,20 @@ class LoginHelper {
                     return
                 } else {
                     print(result)
+                    completionHandler(false)
+                    return
                 }
+            } failureHandler: { error in
+                print(error)
+                completionHandler(false)
+                return
             }
-            completionHandler(false)
-            return
         }
     }
     
     static func googleLogin(with parameter: GoogleUser, completionHandler: @escaping (GoogleLoginResult?) -> ()) {
-        NetworkManager.shared.fetch(endPoint: .googleLogin, method: .POST, parameters: parameter) { (result: ResultEntity<GoogleLoginResult>?) in
-            if let result = result {
+        NetworkManager.shared.fetch(endPoint: .googleLogin, method: .POST, parameters: parameter) { (result: Result<ResultEntity<GoogleLoginResult>, Error>) in
+            result.resolve { result in
                 if result.code == .success {
                     if let data = result.data {
                         completionHandler(data)
@@ -82,11 +86,14 @@ class LoginHelper {
                     }
                 } else {
                     print(result)
+                    completionHandler(nil)
+                    return
                 }
+            } failureHandler: { error in
+                print(error)
+                completionHandler(nil)
+                return
             }
-            
-            completionHandler(nil)
-            return
         }
     }
     

@@ -28,8 +28,8 @@ class ExamDetailViewController: UIViewController {
         self.title = "123"
         self.navigationItem.largeTitleDisplayMode = .never
         
-        NetworkManager.shared.fetch(endPoint: .examPaperContent, method: .POST, parameters: parameters) { (result: ResultEntity<ExamPaper>?) in
-            if let result = result {
+        NetworkManager.shared.fetch(endPoint: .examPaperContent, method: .POST, parameters: parameters) { (result: Result<ResultEntity<ExamPaper>, Error>) in
+            result.resolve { result in
                 guard result.code == .success else {
                     return
                 }
@@ -79,8 +79,8 @@ class ExamDetailViewController: UIViewController {
             "score": score,
         ]
         
-        NetworkManager.shared.fetch(endPoint: .saveExamResult, method: .POST, parameters: parameters) { (result: ResultEntity<Bool>?) in
-            if let result = result {
+        NetworkManager.shared.fetch(endPoint: .saveExamResult, method: .POST, parameters: parameters) { (result: Result<ResultEntity<Bool>, Error>) in
+            result.resolve { result in
                 if result.code == .success {
                     let alertController = UIAlertController(title: "保存成功", message: "您的成绩为 \(score) 分", preferredStyle: .alert)
                     alertController.addAction(.init(title: "确定", style: .default, handler: { (action) in

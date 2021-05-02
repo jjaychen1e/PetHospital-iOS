@@ -57,8 +57,8 @@ class RegisterPasswordViewController: UIViewController {
         }
         // ... Ask the server
         NetworkManager.shared.fetch(endPoint: .register, method: .POST,
-                                    parameters: LoginParameter(username: username, password: password, socialUserID: socialUserID)) { (result: ResultEntity<Bool>?) in
-            if let result = result {
+                                    parameters: LoginParameter(username: username, password: password, socialUserID: socialUserID)) { (result: Result<ResultEntity<Bool>, Error>) in
+            result.resolve { result in
                 self.navigationItem.rightBarButtonItem = self.continueBarButtonItem
                 if result.code == .success, let data = result.data, data == true {
                     LoginHelper.login(with: LoginParameter(username: username, password: password)) { (result) in
@@ -71,6 +71,10 @@ class RegisterPasswordViewController: UIViewController {
                     completionHandler(false)
                     return
                 }
+            } failureHandler: { error in
+                print(error)
+                completionHandler(false)
+                return
             }
         }
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: UIHostingController(rootView: CircularLoadingView().background(Color(Asset.dynamicBackground.color))).view!)

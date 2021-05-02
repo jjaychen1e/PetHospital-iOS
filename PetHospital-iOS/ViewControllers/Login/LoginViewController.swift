@@ -71,19 +71,22 @@ class LoginViewController: UIViewController {
         }
         
         // ... Ask the server
-        NetworkManager.shared.fetch(endPoint: .loginCheck, parameters: ["stuId": username]) { (result: ResultEntity<Bool>?) in
+        NetworkManager.shared.fetch(endPoint: .loginCheck, parameters: ["stuId": username]) { (result: Result<ResultEntity<Bool>, Error>) in
             self.navigationItem.rightBarButtonItem = self.continueBarButtonItem
-            if let result = result {
+            
+            result.resolve { result in
                 if result.code == .success, let data = result.data {
                     completionHandler(data)
                     return
                 }
                 print(result)
-                
-                // 请求出错时不应该跳转
+                completionHandler(false)
+                return
             }
             
             // 请求出错时不应该跳转
+            completionHandler(false)
+            return
         }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: UIHostingController(rootView: CircularLoadingView().background(Color(Asset.dynamicBackground.color))).view!)

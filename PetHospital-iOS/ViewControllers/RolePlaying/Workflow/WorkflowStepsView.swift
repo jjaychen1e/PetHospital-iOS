@@ -74,8 +74,8 @@ struct WorkflowStepsView: View {
         .onAppear {
             let parameter = ["processId": workflow.id]
             
-            NetworkManager.shared.fetch(endPoint: .workflowSteps, method: .POST, parameters: parameter) { (result: ResultEntity<[WorkflowStep]>?) in
-                if let result = result {
+            NetworkManager.shared.fetch(endPoint: .workflowSteps, method: .POST, parameters: parameter) { (result: Result<ResultEntity<[WorkflowStep]>, Error>) in
+                result.resolve { result in
                     if result.code == .success, let workflowSteps = result.data {
                         self.viewModel.workflowSteps = workflowSteps
                     } else {

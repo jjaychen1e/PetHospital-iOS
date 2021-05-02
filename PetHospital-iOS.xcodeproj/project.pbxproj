@@ -56,6 +56,7 @@
 		63C9B1EB25F88C6C0093DD91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C9B1E925F88C6C0093DD91 /* Main.storyboard */; };
 		63C9B1ED25F88C6E0093DD91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C9B1EC25F88C6E0093DD91 /* Assets.xcassets */; };
 		63C9B1F025F88C6E0093DD91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C9B1EE25F88C6E0093DD91 /* LaunchScreen.storyboard */; };
+		63DBBB0C263EEC4F00988E17 /* Result+resolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBBB0B263EEC4F00988E17 /* Result+resolve.swift */; };
 		63E21B402619A93700D5D09E /* DiseaseCaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E21B3F2619A93700D5D09E /* DiseaseCaseDetailViewController.swift */; };
 		63E614DA2608190200F259B6 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E614D92608190200F259B6 /* Endpoint.swift */; };
 		63E614DF2608213C00F259B6 /* GlobalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E614DE2608213C00F259B6 /* GlobalCache.swift */; };
@@ -122,6 +123,7 @@
 		63C9B1EC25F88C6E0093DD91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63C9B1EF25F88C6E0093DD91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63C9B1F125F88C6E0093DD91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63DBBB0B263EEC4F00988E17 /* Result+resolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+resolve.swift"; sourceTree = "<group>"; };
 		63E21B3F2619A93700D5D09E /* DiseaseCaseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseCaseDetailViewController.swift; sourceTree = "<group>"; };
 		63E614D92608190200F259B6 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		63E614DE2608213C00F259B6 /* GlobalCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalCache.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			children = (
 				63A724B42608D3F900A27695 /* UIKit */,
 				638D28F82611773200DC32B9 /* URL+Extension.swift */,
+				63DBBB0B263EEC4F00988E17 /* Result+resolve.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				63F24A06261DD301006AE204 /* WorkflowStep.swift in Sources */,
 				63250372260B336C00E04F6A /* Assets.swift in Sources */,
 				637D12482612ECF40099AA83 /* Disease.swift in Sources */,
+				63DBBB0C263EEC4F00988E17 /* Result+resolve.swift in Sources */,
 				633DA10F26197B7E00C3D7AF /* UIButton+BackgroundColorWithState.swift in Sources */,
 				63A724C82608EA1C00A27695 /* LoginPasswordViewController.swift in Sources */,
 				6325037A260B35EF00E04F6A /* Storyboard Segues.swift in Sources */,

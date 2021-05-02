@@ -40,10 +40,10 @@ class TouringViewController: UIViewController {
     }
     
     private func fetchDepartments() {
-        NetworkManager.shared.fetch(endPoint: .allDepartments, method: .POST) { (result: ResultEntity<[Department]>?) in
+        NetworkManager.shared.fetch(endPoint: .allDepartments, method: .POST) { (result: Result<ResultEntity<[Department]>, Error>) in
             self.refreshControl.endRefreshing()
             
-            if let result = result {
+            result.resolve { result in
                 if result.code == .success, let departments = result.data {
                     self.departments = departments
                     self._departments = departments

@@ -35,10 +35,10 @@ class ExamListViewController: UIViewController {
     func fetchData() {
         let parameters = ["usrId": GlobalCache.shared.loginResult?.user.id]
         
-        NetworkManager.shared.fetch(endPoint: .allExams, method: .POST, parameters: parameters) { (result: ResultEntity<[Exam]>?) in
+        NetworkManager.shared.fetch(endPoint: .allExams, method: .POST, parameters: parameters) { (result: Result<ResultEntity<[Exam]>, Error>) in
             self.refreshControl.endRefreshing()
             
-            if let result = result {
+            result.resolve { result in
                 if result.code == .success, let data = result.data {
                     self.exams = data
                     
